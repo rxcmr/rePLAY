@@ -1,7 +1,8 @@
 %hook Player
 // ADMIN MODULE START
--(void) setAwesomeMode:(bool) {
-  return TRUE;
+-(void) setAwesomeMode:(bool)arg1 {
+  arg1 = TRUE;
+  %orig
 }
 
 -(bool) admin {
@@ -19,28 +20,29 @@
 // STEAM MODULE END
 // SPEED MODULE START
 -(float) miningSpeed {
-  return 1.9999999
+  return 1.9999999;
 }
 
 -(float) swimmingSpeed {
-  return 1.9999999
+  return 1.9999999;
 }
 
 -(float) climbingSpeed {
-  return 1.9999999
+  return 1.9999999;
 }
 
 -(float) runningSpeed {
-  return 1.9999999
+  return 1.9999999;
 }
 
 -(float) flyingSpeed {
-  return 1.9999999
+  return 1.9999999;
 }
 // SPEED MODULE END
 // DAMAGE MODULE START
--(bool) damage:(int) amount:(float) attacker:(id) {
-  return amount(99);
+-(bool) damage:(int)arg1 amount:(float)arg2 attacker:(id)arg3 {
+  arg2 = 99;
+  return %orig;
 }
 
 -(float) gunEfficiency {
@@ -52,21 +54,25 @@
   return FALSE;
 }
 
--(void) environmentalDamage:(int) amount:(float) {
-  return amount(0);
+-(void) environmentalDamage:(int)arg1 amount:(float)arg2 {
+  arg2 = 0;
+  %orig
 }
 // INVINCIBILITY MODULE END
 // COLLISION MODULE START
--(void) didCollideWithEntity:(id) {
-  return nil;
+-(void) didCollideWithEntity:(id)arg1 {
+  arg1 = nil;
+  %orig
 }
 
--(void) didCollideFeetWithEntity:(id) {
-  return nil;
+-(void) didCollideFeetWithEntity:(id)arg1 {
+  arg1 = nil;
+  %orig
 }
 
--(void) slowForEntity:(id) {
-  return nil;
+-(void) slowForEntity:(id)arg1 {
+  arg1 = nil;
+  %orig
 }
 // COLLISION MODULE START
 // ANTI-SUPPRESSOR MODULE START
@@ -78,20 +84,23 @@
   return FALSE;
 }
 
--(void) setSuppressGuns:(bool) {
-  return FALSE;
+-(void) setSuppressGuns:(bool)arg1 {
+  arg1 = FALSE;
+  %orig
 }
 
 -(bool) suppressMining {
   return FALSE;
 }
 
--(void) setSuppressFlight:(bool) {
-  return FALSE;
+-(void) setSuppressFlight:(bool)arg1 {
+  arg1 = FALSE;
+  %orig
 }
 
--(void) setSuppressMining:(bool) {
-  return FALSE;
+-(void) setSuppressMining:(bool)arg1 {
+  arg1 = FALSE;
+  %orig
 }
 // ANTI-SUPPRESSOR MODULE END
 %end
@@ -127,8 +136,9 @@
   return 0;
 }
 
--(void) setTemperature:(float) {
-  return 0;
+-(void) setTemperature:(float)arg1 {
+  arg1 = 0;
+  %orig
 }
 // SURVIVAL MODULE END
 %end
