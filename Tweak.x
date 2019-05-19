@@ -1,7 +1,14 @@
+#define kPath @"/var/mobile/Library/Preferences/the.overmind.rePLAY.plist"
+
+
 %hook Player
 // ADMIN MODULE START
 -(void) setAwesomeMode:(bool)arg1 {
-  arg1 = TRUE;
+  NSDictionary *prefs=[[NSDictionary alloc] initWithContentsOfFiles:kPath];
+  if ([[prefs objectForKey:@"kAdmin"] boolValue]) {
+    arg1 = TRUE;
+    %orig;
+  }
   %orig;
 }
 
