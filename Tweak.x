@@ -1,9 +1,6 @@
 #define PLIST_PATH @"/var/mobile/Library/Preferences/Root.plist"
 
-inline bool GetPrefBool(NSString *key)
-{
-return [[[NSDictionary dictionaryWithContentsOfFile:PLIST_PATH] valueForKey:key] boolValue];
-}
+#define inline bool GetPrefBool(NSString *key){return [[[NSDictionary dictionaryWithContentsOfFile:PLIST_PATH] valueForKey:key] boolValue];}
 
 %hook Player
 // NO DETECT START
