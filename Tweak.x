@@ -1,5 +1,5 @@
 #import <Foundation/Foundation.h>
-#define kPath @"/var/mobile/Library/Preferences/the.overmind.rePLAY.plist"
+#define kPath @"/var/mobile/Library/Preferences/the.overmind.replayprefs.plist"
 
 %hook Player
 // ADMIN MODULE START
