@@ -1,5 +1,5 @@
 INSTALL_TARGET_PROCESSES = Deepworld
-
+ARCHS = arm64
 include $(THEOS)/makefiles/common.mk
 
 TWEAK_NAME = rePLAY
