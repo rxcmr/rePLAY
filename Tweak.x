@@ -241,7 +241,6 @@ return [[[NSDictionary dictionaryWithContentsOfFile:PLIST_PATH] valueForKey:key]
 // PHASE MODULE END
 // SURVIVAL MODULE START
 -(float) temperature {
-  arg1 = 0;
   if (GetPrefBool(@"kSurvival")) {
     return 0;
   }
@@ -250,6 +249,7 @@ return [[[NSDictionary dictionaryWithContentsOfFile:PLIST_PATH] valueForKey:key]
 
 -(void) setTemperature:(float)arg1 {
   if (GetPrefBool(@"kSurvival")) {
+    arg1 = 0;
     %orig;
   }
   %orig;
