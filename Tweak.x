@@ -1,3 +1,5 @@
+#import <Foundation/Foundation.h>
+
 #define PLIST_PATH @"/var/mobile/Library/Preferences/Root.plist"
 
 inline bool GetPrefBool(NSString *key) {
