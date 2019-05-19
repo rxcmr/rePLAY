@@ -1,1 +1,0 @@
-@interface GetPrefBool : NSString

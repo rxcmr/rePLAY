@@ -30,11 +30,16 @@
 // NO DETECT END
 // ADMIN MODULE START
 -(void) setAwesomeMode:(bool)arg1 {
+<<<<<<< HEAD
   if (GetPrefBool(@"kAdmin")) {
     arg1 = TRUE;
     %orig;
   }
   %orig;
+=======
+  arg1 = TRUE;
+  %orig
+>>>>>>> parent of b175590... semi
 }
 
 -(bool) admin {
@@ -120,15 +125,21 @@
 }
 
 -(void) environmentalDamage:(int)arg1 amount:(float)arg2 {
+<<<<<<< HEAD
   if (GetPrefBool(@"kInvincibility")) {
     arg2 = 0;
     %orig;
   }
   %orig;
+=======
+  arg2 = 0;
+  %orig
+>>>>>>> parent of b175590... semi
 }
 // INVINCIBILITY MODULE END
 // COLLISION MODULE START
 -(void) didCollideWithEntity:(id)arg1 {
+<<<<<<< HEAD
   if (GetPrefBool(@"kCollision")) {
     arg1 = nil;
     %orig;
@@ -150,6 +161,20 @@
     %orig;
   }
   %orig;
+=======
+  arg1 = nil;
+  %orig
+}
+
+-(void) didCollideFeetWithEntity:(id)arg1 {
+  arg1 = nil;
+  %orig
+}
+
+-(void) slowForEntity:(id)arg1 {
+  arg1 = nil;
+  %orig
+>>>>>>> parent of b175590... semi
 }
 // COLLISION MODULE END
 // ANTI-SUPPRESSOR MODULE START
@@ -168,11 +193,16 @@
 }
 
 -(void) setSuppressGuns:(bool)arg1 {
+<<<<<<< HEAD
   if (GetPrefBool(@"kASupp")) {
     arg1 = FALSE;
     %orig;
   }
   %orig;
+=======
+  arg1 = FALSE;
+  %orig
+>>>>>>> parent of b175590... semi
 }
 
 -(bool) suppressMining {
@@ -183,6 +213,7 @@
 }
 
 -(void) setSuppressFlight:(bool)arg1 {
+<<<<<<< HEAD
   if (GetPrefBool(@"kASupp")) {
     arg1 = FALSE;
     %orig;
@@ -196,6 +227,15 @@
     %orig;
   }
   %orig;
+=======
+  arg1 = FALSE;
+  %orig
+}
+
+-(void) setSuppressMining:(bool)arg1 {
+  arg1 = FALSE;
+  %orig
+>>>>>>> parent of b175590... semi
 }
 // ANTI-SUPPRESSOR MODULE END
 %end
@@ -247,11 +287,16 @@
 }
 
 -(void) setTemperature:(float)arg1 {
+<<<<<<< HEAD
   if (GetPrefBool(@"kSurvival")) {
     arg1 = 0;
     %orig;
   }
   %orig;
+=======
+  arg1 = 0;
+  %orig
+>>>>>>> parent of b175590... semi
 }
 // SURVIVAL MODULE END
 %end
@@ -259,10 +304,14 @@
 %hook CCSpeed
 // SPEED MODULE START
 -(double) speed {
+<<<<<<< HEAD
   if (GetPrefBool(@"kSpeed")) {
     return 1.9999999;
   }
   return %orig;
+=======
+  return 1.9999999
+>>>>>>> parent of b175590... semi
 }
 // SPEED MODULE END
 %end
