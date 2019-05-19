@@ -8,7 +8,7 @@
 			<key>cell</key>
 			<string>PSGroupCell</string>
 			<key>label</key>
-			<string>replayprefs</string>
+			<string>Admin Module</string>
 		</dict>
 		<dict>
 			<key>cell</key>
@@ -22,8 +22,152 @@
 			<key>label</key>
 			<string>Enable</string>
 		</dict>
+				<dict>
+			<key>cell</key>
+			<string>PSGroupCell</string>
+			<key>label</key>
+			<string>Steam Module</string>
+		</dict>
+		<dict>
+			<key>cell</key>
+			<string>PSSwitchCell</string>
+			<key>default</key>
+			<true/>
+			<key>defaults</key>
+			<string>the.overmind.replayprefs</string>
+			<key>key</key>
+			<string>kSteam</string>
+			<key>label</key>
+			<string>Enable</string>
+		</dict>
+				<dict>
+			<key>cell</key>
+			<string>PSGroupCell</string>
+			<key>label</key>
+			<string>Speed Module</string>
+		</dict>
+		<dict>
+			<key>cell</key>
+			<string>PSSwitchCell</string>
+			<key>default</key>
+			<true/>
+			<key>defaults</key>
+			<string>the.overmind.replayprefs</string>
+			<key>key</key>
+			<string>kSpeed</string>
+			<key>label</key>
+			<string>Enable</string>
+		</dict>
+				<dict>
+			<key>cell</key>
+			<string>PSGroupCell</string>
+			<key>label</key>
+			<string>Invincibility Module</string>
+		</dict>
+		<dict>
+			<key>cell</key>
+			<string>PSSwitchCell</string>
+			<key>default</key>
+			<true/>
+			<key>defaults</key>
+			<string>the.overmind.replayprefs</string>
+			<key>key</key>
+			<string>kInvincibility</string>
+			<key>label</key>
+			<string>Enable</string>
+		</dict>
+				<dict>
+			<key>cell</key>
+			<string>PSGroupCell</string>
+			<key>label</key>
+			<string>Damage Module</string>
+		</dict>
+		<dict>
+			<key>cell</key>
+			<string>PSSwitchCell</string>
+			<key>default</key>
+			<true/>
+			<key>defaults</key>
+			<string>the.overmind.replayprefs</string>
+			<key>key</key>
+			<string>kDamage</string>
+			<key>label</key>
+			<string>Enable</string>
+		</dict>
+				<dict>
+			<key>cell</key>
+			<string>PSGroupCell</string>
+			<key>label</key>
+			<string>Phase Module</string>
+		</dict>
+		<dict>
+			<key>cell</key>
+			<string>PSSwitchCell</string>
+			<key>default</key>
+			<true/>
+			<key>defaults</key>
+			<string>the.overmind.replayprefs</string>
+			<key>key</key>
+			<string>kPhase</string>
+			<key>label</key>
+			<string>Enable</string>
+		</dict>
+				<dict>
+			<key>cell</key>
+			<string>PSGroupCell</string>
+			<key>label</key>
+			<string>Survival Module</string>
+		</dict>
+		<dict>
+			<key>cell</key>
+			<string>PSSwitchCell</string>
+			<key>default</key>
+			<true/>
+			<key>defaults</key>
+			<string>the.overmind.replayprefs</string>
+			<key>key</key>
+			<string>kSurvival</string>
+			<key>label</key>
+			<string>Enable</string>
+		</dict>
+				<dict>
+			<key>cell</key>
+			<string>PSGroupCell</string>
+			<key>label</key>
+			<string>Anti-Suppressor Module</string>
+		</dict>
+		<dict>
+			<key>cell</key>
+			<string>PSSwitchCell</string>
+			<key>default</key>
+			<true/>
+			<key>defaults</key>
+			<string>the.overmind.replayprefs</string>
+			<key>key</key>
+			<string>kASupp</string>
+			<key>label</key>
+			<string>Enable</string>
+		</dict>
+				<dict>
+			<key>cell</key>
+			<string>PSGroupCell</string>
+			<key>label</key>
+			<string>Collision Module</string>
+		</dict>
+		<dict>
+			<key>cell</key>
+			<string>PSSwitchCell</string>
+			<key>default</key>
+			<true/>
+			<key>defaults</key>
+			<string>the.overmind.replayprefs</string>
+			<key>key</key>
+			<string>kCollision</string>
+			<key>label</key>
+			<string>Enable</string>
+		</dict>
 	</array>
 	<key>title</key>
-	<string>replayprefs</string>
+	<string>rePLAY</string>
 </dict>
 </plist>
