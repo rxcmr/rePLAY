@@ -19,14 +19,14 @@ return [[[NSDictionary dictionaryWithContentsOfFile:PLIST_PATH] valueForKey:key]
   if (GetPrefBool(@"kNoDetect")) {
       return nil;
   }
-  %orig;
+  return %orig;
 }
 
 -(bool) karmaIsPoor {
   if (GetPrefBool(@"kNoDetect")) {
     return FALSE;
   }
-  %orig;
+  return %orig;
 }
 // NO DETECT END
 // ADMIN MODULE START
@@ -42,7 +42,7 @@ return [[[NSDictionary dictionaryWithContentsOfFile:PLIST_PATH] valueForKey:key]
   if (GetPrefBool(@"kAdmin")) {
       return TRUE;
   }
-  %orig;
+  return %orig;
 }
 // ADMIN MODULE END
 // STEAM MODULE START
@@ -50,14 +50,14 @@ return [[[NSDictionary dictionaryWithContentsOfFile:PLIST_PATH] valueForKey:key]
   if (GetPrefBool(@"kSteam")) {
     return TRUE;
   }
-  %orig;
+  return %orig;
 }
 
 -(double) steamCooldownDuration {
   if (GetPrefBool(@"kSteam")) {
     return 0;
   }
-  %orig;
+  return %orig;
 }
 // STEAM MODULE END
 // SPEED MODULE START
@@ -65,35 +65,35 @@ return [[[NSDictionary dictionaryWithContentsOfFile:PLIST_PATH] valueForKey:key]
   if (GetPrefBool(@"kSpeed")) {
       return 1.9999999;
   }
-  %orig;
+  return %orig;
 }
 
 -(float) swimmingSpeed {
   if (GetPrefBool(@"kSpeed")) {
       return 1.9999999;
   }
-  %orig;
+  return %orig;
 }
 
 -(float) climbingSpeed {
   if (GetPrefBool(@"kSpeed")) {
       return 1.9999999;
   }
-  %orig;
+  return %orig;
 }
 
 -(float) runningSpeed {
   if (GetPrefBool(@"kSpeed")) {
       return 1.9999999;
   }
-  %orig;
+  return %orig;
 }
 
 -(float) flyingSpeed {
   if (GetPrefBool(@"kSpeed")) {
       return 1.9999999;
   }
-  %orig;
+  return %orig;
 }
 // SPEED MODULE END
 // DAMAGE MODULE START
@@ -102,14 +102,14 @@ return [[[NSDictionary dictionaryWithContentsOfFile:PLIST_PATH] valueForKey:key]
     arg2 = 99;
     return %orig;
   }
-  %orig;
+  return %orig;
 }
 
 -(float) gunEfficiency {
   if (GetPrefBool(@"kDamage")) {
     return 20;
   }
-  %orig;
+  return %orig;
 }
 // DAMAGE MODULE END
 // INVINCIBILITY MODULE START
@@ -117,7 +117,7 @@ return [[[NSDictionary dictionaryWithContentsOfFile:PLIST_PATH] valueForKey:key]
   if (GetPrefBool(@"kInvincibility")) {
     return FALSE;
   }
-  %orig;
+  return %orig;
 }
 
 -(void) environmentalDamage:(int)arg1 amount:(float)arg2 {
@@ -158,14 +158,14 @@ return [[[NSDictionary dictionaryWithContentsOfFile:PLIST_PATH] valueForKey:key]
   if (GetPrefBool(@"kASupp")) {
       return FALSE;
   }
-  %orig;
+  return %orig;
 }
 
 -(bool) suppressGuns {
   if (GetPrefBool(@"kASupp")) {
     return FALSE;
   }
-  %orig;
+  return %orig;
 }
 
 -(void) setSuppressGuns:(bool)arg1 {
@@ -180,7 +180,7 @@ return [[[NSDictionary dictionaryWithContentsOfFile:PLIST_PATH] valueForKey:key]
   if (GetPrefBool(@"kASupp")) {
     return FALSE;
   }
-  %orig;
+  return %orig;
 }
 
 -(void) setSuppressFlight:(bool)arg1 {
@@ -207,7 +207,7 @@ return [[[NSDictionary dictionaryWithContentsOfFile:PLIST_PATH] valueForKey:key]
   if (GetPrefBool(@"kPhase")) {
     return FALSE;
   }
-  %orig;
+  return %orig;
 }
 // PHASE MODULE END
 %end
@@ -218,7 +218,7 @@ return [[[NSDictionary dictionaryWithContentsOfFile:PLIST_PATH] valueForKey:key]
   if (GetPrefBool(@"kPhase")) {
     return FALSE;
   }
-  %orig;
+  return %orig;
 }
 // PHASE MODULE END
 %end
@@ -229,14 +229,14 @@ return [[[NSDictionary dictionaryWithContentsOfFile:PLIST_PATH] valueForKey:key]
   if (GetPrefBool(@"kPhase")) {
     return TRUE;
   }
-  %orig;
+  return %orig;
 }
 
 -(bool) ownedByPlayer {
   if (GetPrefBool(@"kPhase")) {
     return TRUE;
   }
-  %orig;
+  return %orig;
 }
 // PHASE MODULE END
 // SURVIVAL MODULE START
@@ -245,7 +245,7 @@ return [[[NSDictionary dictionaryWithContentsOfFile:PLIST_PATH] valueForKey:key]
   if (GetPrefBool(@"kSurvival")) {
     return 0;
   }
-  %orig;
+  return %orig;
 }
 
 -(void) setTemperature:(float)arg1 {
@@ -263,7 +263,7 @@ return [[[NSDictionary dictionaryWithContentsOfFile:PLIST_PATH] valueForKey:key]
   if (GetPrefBool(@"kSpeed")) {
     return 1.9999999;
   }
-  %orig;
+  return %orig;
 }
 // SPEED MODULE END
 %end
@@ -274,14 +274,14 @@ return [[[NSDictionary dictionaryWithContentsOfFile:PLIST_PATH] valueForKey:key]
   if (GetPrefBool(@"kDamage")) {
     return 1e+32;
   }
-  %orig;
+  return %orig;
 }
 
 -(float) fieldDamageAmount {
   if (GetPrefBool(@"kDamage")) {
     return 1e+32;
   }
-  %orig;
+  return %orig;
 }
 
 -(float) damageRange {
@@ -289,7 +289,7 @@ return [[[NSDictionary dictionaryWithContentsOfFile:PLIST_PATH] valueForKey:key]
     return 1e+32;
     %orig;
   }
-  %orig;
+  return %orig;
 }
 // DAMAGE MODULE END
 // INVINCIBILITY MODULE START
@@ -297,7 +297,7 @@ return [[[NSDictionary dictionaryWithContentsOfFile:PLIST_PATH] valueForKey:key]
   if (GetPrefBool(@"kInvincibility")) {
     return TRUE;
   }
-  %orig;
+  return %orig;
 }
 // INVINCIBILITY MODULE END
 %end
@@ -308,7 +308,7 @@ return [[[NSDictionary dictionaryWithContentsOfFile:PLIST_PATH] valueForKey:key]
   if (GetPrefBool(@"kInvincibility")) {
     return 0;
   }
-  %orig;
+  return %orig;
 }
 // INVINCIBILITY MODULE END
 %end
@@ -319,7 +319,7 @@ return [[[NSDictionary dictionaryWithContentsOfFile:PLIST_PATH] valueForKey:key]
   if (GetPrefBool(@"kNoDetect")) {
     return FALSE;
   }
-  %orig;
+  return %orig;
 }
 // NO DETECT END
 %end
@@ -330,7 +330,7 @@ return [[[NSDictionary dictionaryWithContentsOfFile:PLIST_PATH] valueForKey:key]
   if (GetPrefBool(@"kNoDetect")) {
     return FALSE;
   }
-  %orig;
+  return %orig;
 }
 // NO DETECT END
 %end
