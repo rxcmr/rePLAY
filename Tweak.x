@@ -21,7 +21,6 @@ kCollision
     arg1 = TRUE;
     %orig;
   }
-  [prefs release];
   %orig;
 }
 
@@ -31,7 +30,6 @@ kCollision
   if ([[prefs objectForKey:@"kAdmin"] boolValue]) {
     return TRUE;
   }
-  [prefs release];
   return %orig;
 }
 // ADMIN MODULE END
@@ -42,7 +40,6 @@ kCollision
   if ([[prefs objectForKey:@"kSteam"] boolValue]) {
     return TRUE;
   }
-  [prefs release];
   return %orig;
 }
 
@@ -52,7 +49,6 @@ kCollision
   if ([[prefs objectForKey:@"kSteam"] boolValue]) {
     return 0;
   }
-  [prefs release];
   return %orig;
 }
 // STEAM MODULE END
@@ -63,7 +59,6 @@ kCollision
   if ([[prefs objectForKey:@"kSpeed"] boolValue]) {
     return 1.9999999;
   }
-  [prefs release];
   return %orig;
 }
 
@@ -73,7 +68,6 @@ kCollision
   if ([[prefs objectForKey:@"kSpeed"] boolValue]) {
     return 1.9999999;
   }
-  [prefs release];
   return %orig;
 }
 
@@ -83,7 +77,6 @@ kCollision
   if ([[prefs objectForKey:@"kSpeed"] boolValue]) {
     return 1.9999999;
   }
-  [prefs release];
   return %orig;
 }
 
@@ -93,7 +86,6 @@ kCollision
   if ([[prefs objectForKey:@"kSpeed"] boolValue]) {
     return 1.9999999;
   }
-  [prefs release];
   return %orig;
 }
 
@@ -103,7 +95,6 @@ kCollision
   if ([[prefs objectForKey:@"kSpeed"] boolValue]) {
     return 1.9999999;
   }
-  [prefs release];
   return %orig;
 }
 // SPEED MODULE END
@@ -115,7 +106,6 @@ kCollision
     arg2 = 99;
     return %orig;
   }
-  [prefs release];
   return %orig;
 }
 
@@ -125,7 +115,6 @@ kCollision
   if ([[prefs objectForKey:@"kDamage"] boolValue]) {
     return 20;
   }
-  [prefs release];
   return %orig;
 }
 // DAMAGE MODULE END
@@ -136,7 +125,6 @@ kCollision
   if ([[prefs objectForKey:@"kInvincibility"] boolValue]) {
     return FALSE;
   }
-  [prefs release];
   return %orig;
 }
 
@@ -147,7 +135,6 @@ kCollision
     arg2 = 0;
     %orig;
   }
-  [prefs release];
   %orig;
 }
 // INVINCIBILITY MODULE END
@@ -159,7 +146,6 @@ kCollision
     arg1 = nil;
     %orig;
   }
-  [prefs release];
   %orig;
 }
 
@@ -170,7 +156,6 @@ kCollision
     arg1 = nil;
     %orig;
   }
-  [prefs release];
   %orig;
 }
 
@@ -181,7 +166,6 @@ kCollision
     arg1 = nil;
     %orig;
   }
-  [prefs release];
   %orig;
 }
 // COLLISION MODULE START
@@ -192,7 +176,6 @@ kCollision
   if ([[prefs objectForKey:@"kASupp"] boolValue]) {
     return FALSE;
   }
-  [prefs release];
   return %orig;
 }
 
@@ -202,7 +185,6 @@ kCollision
   if ([[prefs objectForKey:@"kASupp"] boolValue]) {
     return FALSE;
   }
-  [prefs release];
   return %orig;
 }
 
@@ -213,7 +195,6 @@ kCollision
     arg1 = FALSE;
     %orig;
   }
-  [prefs release];
   %orig;
 }
 
@@ -223,7 +204,6 @@ kCollision
   if ([[prefs objectForKey:@"kASupp"] boolValue]) {
     return FALSE;
   }
-  [prefs release];
   return %orig;
 }
 
@@ -234,7 +214,6 @@ kCollision
     arg1 = FALSE;
     %orig;
   }
-  [prefs release];
   %orig;
 }
 
@@ -245,7 +224,6 @@ kCollision
     arg1 = FALSE;
     %orig;
   }
-  [prefs release];
   %orig;
 }
 // ANTI-SUPPRESSOR MODULE END
@@ -259,7 +237,6 @@ kCollision
   if ([[prefs objectForKey:@"kPhase"] boolValue]) {
     return FALSE;
   }
-  [prefs release];
   return %orig;
 }
 // PHASE MODULE END
@@ -273,7 +250,6 @@ kCollision
   if ([[prefs objectForKey:@"kPhase"] boolValue]) {
     return FALSE;
   }
-  [prefs release];
   return %orig;
 }
 // PHASE MODULE END
@@ -287,7 +263,6 @@ kCollision
   if ([[prefs objectForKey:@"kPhase"] boolValue]) {
     return TRUE;
   }
-  [prefs release];
   return %orig;
 }
 
@@ -297,7 +272,6 @@ kCollision
   if ([[prefs objectForKey:@"kPhase"] boolValue]) {
     return TRUE;
   }
-  [prefs release];
   return %orig;
 }
 // PHASE MODULE END
@@ -308,7 +282,6 @@ kCollision
   if ([[prefs objectForKey:@"kSurvival"] boolValue]) {
     return 0;
   }
-  [prefs release];
   return %orig;
 }
 
@@ -319,7 +292,6 @@ kCollision
     arg1 = 0;
     %orig;
   }
-  [prefs release];
   %orig;
 }
 // SURVIVAL MODULE END
@@ -333,7 +305,6 @@ kCollision
   if ([[prefs objectForKey:@"kSpeed"] boolValue]) {
     return 1.9999999;
   }
-  [prefs release];
   return %orig;
 }
 // SPEED MODULE END
@@ -347,7 +318,6 @@ kCollision
   if ([[prefs objectForKey:@"kDamage"] boolValue]) {
     return 1e+32;
   }
-  [prefs release];
   return %orig;
 }
 
@@ -357,7 +327,6 @@ kCollision
   if ([[prefs objectForKey:@"kDamage"] boolValue]) {
     return 1e+32;
   }
-  [prefs release];
   return %orig;
 }
 
@@ -367,7 +336,6 @@ kCollision
   if ([[prefs objectForKey:@"kDamage"] boolValue]) {
     return 1e+32;
   }
-  [prefs release];
   return %orig;
 }
 // DAMAGE MODULE END
@@ -378,7 +346,6 @@ kCollision
   if ([[prefs objectForKey:@"kInvincibility"] boolValue]) {
     return TRUE;
   }
-  [prefs release];
   return %orig;
 }
 // INVINCIBILITY MODULE END
@@ -392,7 +359,6 @@ kCollision
   if ([[prefs objectForKey:@"kInvincibility"] boolValue]) {
     return 0;
   }
-  [prefs release];
   return %orig;
 }
 // INVINCIBILITY MODULE END
