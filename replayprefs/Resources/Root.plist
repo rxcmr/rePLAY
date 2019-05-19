@@ -25,14 +25,26 @@
 			<key>default</key>
 			<false/>
 			<key>defaults</key>
-			<string>the.overmind.rePLAY</string>                 //insted "xxx" write you bundle (the same in your tweak.xm, but here without ".plist" extension)
+			<string>the.overmind.replayprefs</string>                 //insted "xxx" write you bundle (the same in your tweak.xm, but here without ".plist" extension)
 			<key>key</key>
 			<string>kAdmin</string>                //must be the same in your tweak.xm
 			<key>label</key>
 			<string>Enable</string>       //this is the text that will appear at the left of your toggle
 		</dict>
+		<dict>
+			<key>cell</key>
+			<string>PSGroupCell</string>
+			<key>label</key>
+			<string>Hack by xxx only for xxx</string>
+		</dict>
+		<dict>
+			<key>cell</key>
+			<string>PSTextCell</string>
+			<key>label</key>
+			<string>Visit xxxx for more!</string>
+		</dict>
 	</array>
 	<key>title</key>
-	<string>rePLAY</string>
+	<string>XXX Hack</string>
 </dict>
 </plist>
