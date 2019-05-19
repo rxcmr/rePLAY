@@ -1,241 +1,106 @@
-#import <Foundation/Foundation.h>
-
-#define PLIST_PATH @"/var/mobile/Library/Preferences/Root.plist"
-
-#define GetPrefBool inline bool GetPrefBool(NSString *key) {return [[[NSDictionary dictionaryWithContentsOfFile:PLIST_PATH] valueForKey:key] boolValue];}
-
 %hook Player
-// NO DETECT START
--(void) setKarma:(id)arg1 {
-  if (GetPrefBool(@"kNoDetect")) {
-    arg1 = nil;
-    %orig;
-  }
-  %orig;
-}
-
--(id) karma {
-  if (GetPrefBool(@"kNoDetect")) {
-      return nil;
-  }
-  return %orig;
-}
-
--(bool) karmaIsPoor {
-  if (GetPrefBool(@"kNoDetect")) {
-    return FALSE;
-  }
-  return %orig;
-}
-// NO DETECT END
 // ADMIN MODULE START
 -(void) setAwesomeMode:(bool)arg1 {
-<<<<<<< HEAD
-  if (GetPrefBool(@"kAdmin")) {
-    arg1 = TRUE;
-    %orig;
-  }
-  %orig;
-=======
   arg1 = TRUE;
-  %orig
->>>>>>> parent of b175590... semi
+  %orig;
 }
 
 -(bool) admin {
-  if (GetPrefBool(@"kAdmin")) {
-      return TRUE;
-  }
-  return %orig;
+  return TRUE;
 }
 // ADMIN MODULE END
 // STEAM MODULE START
 -(bool) hasSteam {
-  if (GetPrefBool(@"kSteam")) {
-    return TRUE;
-  }
-  return %orig;
+  return TRUE;
 }
 
 -(double) steamCooldownDuration {
-  if (GetPrefBool(@"kSteam")) {
-    return 0;
-  }
-  return %orig;
+  return 0;
 }
 // STEAM MODULE END
 // SPEED MODULE START
 -(float) miningSpeed {
-  if (GetPrefBool(@"kSpeed")) {
-      return 1.9999999;
-  }
-  return %orig;
+  return 1.9999999;
 }
 
 -(float) swimmingSpeed {
-  if (GetPrefBool(@"kSpeed")) {
-      return 1.9999999;
-  }
-  return %orig;
+  return 1.9999999;
 }
 
 -(float) climbingSpeed {
-  if (GetPrefBool(@"kSpeed")) {
-      return 1.9999999;
-  }
-  return %orig;
+  return 1.9999999;
 }
 
 -(float) runningSpeed {
-  if (GetPrefBool(@"kSpeed")) {
-      return 1.9999999;
-  }
-  return %orig;
+  return 1.9999999;
 }
 
 -(float) flyingSpeed {
-  if (GetPrefBool(@"kSpeed")) {
-      return 1.9999999;
-  }
-  return %orig;
+  return 1.9999999;
 }
 // SPEED MODULE END
 // DAMAGE MODULE START
 -(bool) damage:(int)arg1 amount:(float)arg2 attacker:(id)arg3 {
-  if (GetPrefBool(@"kDamage")) {
-    arg2 = 99;
-    return %orig;
-  }
+  arg2 = 99;
   return %orig;
 }
 
 -(float) gunEfficiency {
-  if (GetPrefBool(@"kDamage")) {
-    return 20;
-  }
-  return %orig;
+  return 20;
 }
 // DAMAGE MODULE END
 // INVINCIBILITY MODULE START
 -(bool) canBeDamaged {
-  if (GetPrefBool(@"kInvincibility")) {
-    return FALSE;
-  }
-  return %orig;
+  return FALSE;
 }
 
 -(void) environmentalDamage:(int)arg1 amount:(float)arg2 {
-<<<<<<< HEAD
-  if (GetPrefBool(@"kInvincibility")) {
-    arg2 = 0;
-    %orig;
-  }
-  %orig;
-=======
   arg2 = 0;
-  %orig
->>>>>>> parent of b175590... semi
+  %orig;
 }
 // INVINCIBILITY MODULE END
 // COLLISION MODULE START
 -(void) didCollideWithEntity:(id)arg1 {
-<<<<<<< HEAD
-  if (GetPrefBool(@"kCollision")) {
-    arg1 = nil;
-    %orig;
-  }
+  arg1 = nil;
   %orig;
 }
 
 -(void) didCollideFeetWithEntity:(id)arg1 {
-  if (GetPrefBool(@"kCollision")) {
-    arg1 = nil;
-    %orig;
-  }
+  arg1 = nil;
   %orig;
 }
 
 -(void) slowForEntity:(id)arg1 {
-  if (GetPrefBool(@"kCollision")) {
-    arg1 = nil;
-    %orig;
-  }
+  arg1 = nil;
   %orig;
-=======
-  arg1 = nil;
-  %orig
 }
-
--(void) didCollideFeetWithEntity:(id)arg1 {
-  arg1 = nil;
-  %orig
-}
-
--(void) slowForEntity:(id)arg1 {
-  arg1 = nil;
-  %orig
->>>>>>> parent of b175590... semi
-}
-// COLLISION MODULE END
+// COLLISION MODULE START
 // ANTI-SUPPRESSOR MODULE START
 -(bool) suppressFlight {
-  if (GetPrefBool(@"kASupp")) {
-      return FALSE;
-  }
-  return %orig;
+  return FALSE;
 }
 
 -(bool) suppressGuns {
-  if (GetPrefBool(@"kASupp")) {
-    return FALSE;
-  }
-  return %orig;
+  return FALSE;
 }
 
 -(void) setSuppressGuns:(bool)arg1 {
-<<<<<<< HEAD
-  if (GetPrefBool(@"kASupp")) {
-    arg1 = FALSE;
-    %orig;
-  }
-  %orig;
-=======
   arg1 = FALSE;
-  %orig
->>>>>>> parent of b175590... semi
+  %orig;
 }
 
 -(bool) suppressMining {
-  if (GetPrefBool(@"kASupp")) {
-    return FALSE;
-  }
-  return %orig;
+  return FALSE;
 }
 
 -(void) setSuppressFlight:(bool)arg1 {
-<<<<<<< HEAD
-  if (GetPrefBool(@"kASupp")) {
-    arg1 = FALSE;
-    %orig;
-  }
+  arg1 = FALSE;
   %orig;
 }
 
 -(void) setSuppressMining:(bool)arg1 {
-  if (GetPrefBool(@"kASupp")) {
-    arg1 = FALSE;
-    %orig;
-  }
+  arg1 = FALSE;
   %orig;
-=======
-  arg1 = FALSE;
-  %orig
-}
-
--(void) setSuppressMining:(bool)arg1 {
-  arg1 = FALSE;
-  %orig
->>>>>>> parent of b175590... semi
 }
 // ANTI-SUPPRESSOR MODULE END
 %end
@@ -243,10 +108,7 @@
 %hook WorldZone
 // PHASE MODULE START
 -(bool) isProtected {
-  if (GetPrefBool(@"kPhase")) {
-    return FALSE;
-  }
-  return %orig;
+  return FALSE;
 }
 // PHASE MODULE END
 %end
@@ -254,10 +116,7 @@
 %hook BaseBlock
 // PHASE MODULE START
 -(bool) protectedByField {
-  if (GetPrefBool(@"kPhase")) {
-    return FALSE;
-  }
-  return %orig;
+  return FALSE;
 }
 // PHASE MODULE END
 %end
@@ -265,38 +124,21 @@
 %hook MetaBlock
 // PHASE MODULE START
 -(bool) ownedByPlayerOrFollower {
-  if (GetPrefBool(@"kPhase")) {
-    return TRUE;
-  }
-  return %orig;
+  return TRUE;
 }
 
 -(bool) ownedByPlayer {
-  if (GetPrefBool(@"kPhase")) {
-    return TRUE;
-  }
-  return %orig;
+  return TRUE;
 }
 // PHASE MODULE END
 // SURVIVAL MODULE START
 -(float) temperature {
-  if (GetPrefBool(@"kSurvival")) {
-    return 0;
-  }
-  return %orig;
+  return 0;
 }
 
 -(void) setTemperature:(float)arg1 {
-<<<<<<< HEAD
-  if (GetPrefBool(@"kSurvival")) {
-    arg1 = 0;
-    %orig;
-  }
-  %orig;
-=======
   arg1 = 0;
-  %orig
->>>>>>> parent of b175590... semi
+  %orig;
 }
 // SURVIVAL MODULE END
 %end
@@ -304,14 +146,7 @@
 %hook CCSpeed
 // SPEED MODULE START
 -(double) speed {
-<<<<<<< HEAD
-  if (GetPrefBool(@"kSpeed")) {
-    return 1.9999999;
-  }
-  return %orig;
-=======
-  return 1.9999999
->>>>>>> parent of b175590... semi
+  return 1.9999999;
 }
 // SPEED MODULE END
 %end
@@ -319,33 +154,20 @@
 %hook Item
 // DAMAGE MODULE START
 -(float) damageAmount {
-  if (GetPrefBool(@"kDamage")) {
-    return 1e+32;
-  }
-  return %orig;
+  return 1e+32;
 }
 
 -(float) fieldDamageAmount {
-  if (GetPrefBool(@"kDamage")) {
-    return 1e+32;
-  }
-  return %orig;
+  return 1e+32;
 }
 
 -(float) damageRange {
-  if (GetPrefBool(@"kDamage")) {
-    return 1e+32;
-    %orig;
-  }
-  return %orig;
+  return 1e+32;
 }
 // DAMAGE MODULE END
 // INVINCIBILITY MODULE START
 -(bool) invulnerable {
-  if (GetPrefBool(@"kInvincibility")) {
-    return TRUE;
-  }
-  return %orig;
+  return TRUE;
 }
 // INVINCIBILITY MODULE END
 %end
@@ -353,32 +175,7 @@
 %hook EntityConfig
 // INVINCIBILITY MODULE START
 -(float) collisionDamageAmount {
-  if (GetPrefBool(@"kInvincibility")) {
-    return 0;
-  }
-  return %orig;
+  return 0;
 }
 // INVINCIBILITY MODULE END
-%end
-
-%hook FlurryUtil
-// NO DETECT START
-+(BOOL) deviceIsJailbroken {
-  if (GetPrefBool(@"kNoDetect")) {
-    return FALSE;
-  }
-  return %orig;
-}
-// NO DETECT END
-%end
-
-%hook PFDevice
-// NO DETECT START
--(bool) isJailbroken {
-  if (GetPrefBool(@"kNoDetect")) {
-    return FALSE;
-  }
-  return %orig;
-}
-// NO DETECT END
 %end
