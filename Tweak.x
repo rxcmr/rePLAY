@@ -4,7 +4,7 @@
 %hook Player
 // ADMIN MODULE START
 -(void) setAwesomeMode:(bool)arg1 {
-  NSDictionary *prefs=[[NSDictionary alloc] initWithContentsOfFiles:kPath];
+  NSDictionary *prefs=[[NSDictionary alloc] initWithContentsOfFile:kPath];
   if ([[prefs objectForKey:@"kAdmin"] boolValue]) {
     arg1 = TRUE;
     %orig;
