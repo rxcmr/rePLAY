@@ -1,105 +1,201 @@
+#define PLIST_PATH @"/var/mobile/Library/Preferences/Root.plist"
+
+inline bool GetPrefBool(NSString *key)
+{
+return [[[NSDictionary dictionaryWithContentsOfFile:PLIST_PATH] valueForKey:key] boolValue];
+}
+
 %hook Player
+// NO DETECT START
+-(void) setKarma:(id)arg1 {
+  if (GetPrefBool(@"kNoDetect")) {
+    arg1 = nil;
+    %orig;
+  }
+  %orig;
+}
+
+-(id) karma {
+  if (GetPrefBool(@"kNoDetect")) {
+      return nil;
+  }
+  %orig;
+}
+
+-(bool) karmaIsPoor {
+  if (GetPrefBool(@"kNoDetect")) {
+    return FALSE;
+  }
+  %orig;
+}
+// NO DETECT END
 // ADMIN MODULE START
 -(void) setAwesomeMode:(bool)arg1 {
-  arg1 = TRUE;
+  if (GetPrefBool(@"kAdmin")) {
+    arg1 = TRUE;
+    %orig;
+  }
   %orig;
 }
 
 -(bool) admin {
-  return TRUE;
+  if (GetPrefBool(@"kAdmin")) {
+      return TRUE;
+  }
+  %orig;
 }
 // ADMIN MODULE END
 // STEAM MODULE START
 -(bool) hasSteam {
-  return TRUE;
+  if (GetPrefBool(@"kSteam")) {
+    return TRUE;
+  }
+  %orig;
 }
 
 -(double) steamCooldownDuration {
-  return 0;
+  if (GetPrefBool(@"kSteam")) {
+    return 0;
+  }
+  %orig;
 }
 // STEAM MODULE END
 // SPEED MODULE START
 -(float) miningSpeed {
-  return 1.9999999;
+  if (GetPrefBool(@"kSpeed")) {
+      return 1.9999999;
+  }
+  %orig;
 }
 
 -(float) swimmingSpeed {
-  return 1.9999999;
+  if (GetPrefBool(@"kSpeed")) {
+      return 1.9999999;
+  }
+  %orig;
 }
 
 -(float) climbingSpeed {
-  return 1.9999999;
+  if (GetPrefBool(@"kSpeed")) {
+      return 1.9999999;
+  }
+  %orig;
 }
 
 -(float) runningSpeed {
-  return 1.9999999;
+  if (GetPrefBool(@"kSpeed")) {
+      return 1.9999999;
+  }
+  %orig;
 }
 
 -(float) flyingSpeed {
-  return 1.9999999;
+  if (GetPrefBool(@"kSpeed")) {
+      return 1.9999999;
+  }
+  %orig;
 }
 // SPEED MODULE END
 // DAMAGE MODULE START
 -(bool) damage:(int)arg1 amount:(float)arg2 attacker:(id)arg3 {
-  arg2 = 99;
-  return %orig;
+  if (GetPrefBool(@"kDamage")) {
+    arg2 = 99;
+    return %orig;
+  }
+  %orig;
 }
 
 -(float) gunEfficiency {
-  return 20;
+  if (GetPrefBool(@"kDamage")) {
+    return 20;
+  }
+  %orig;
 }
 // DAMAGE MODULE END
 // INVINCIBILITY MODULE START
 -(bool) canBeDamaged {
-  return FALSE;
+  if (GetPrefBool(@"kInvincibility")) {
+    return FALSE;
+  }
+  %orig;
 }
 
 -(void) environmentalDamage:(int)arg1 amount:(float)arg2 {
-  arg2 = 0;
+  if (GetPrefBool(@"kInvincibility")) {
+    arg2 = 0;
+    %orig;
+  }
   %orig;
 }
 // INVINCIBILITY MODULE END
 // COLLISION MODULE START
 -(void) didCollideWithEntity:(id)arg1 {
-  arg1 = nil;
+  if (GetPrefBool(@"kCollision")) {
+    arg1 = nil;
+    %orig;
+  }
   %orig;
 }
 
 -(void) didCollideFeetWithEntity:(id)arg1 {
-  arg1 = nil;
+  if (GetPrefBool(@"kCollision")) {
+    arg1 = nil;
+    %orig;
+  }
   %orig;
 }
 
 -(void) slowForEntity:(id)arg1 {
-  arg1 = nil;
+  if (GetPrefBool(@"kCollision")) {
+    arg1 = nil;
+    %orig;
+  }
   %orig;
 }
-// COLLISION MODULE START
+// COLLISION MODULE END
 // ANTI-SUPPRESSOR MODULE START
 -(bool) suppressFlight {
-  return FALSE;
+  if (GetPrefBool(@"kASupp")) {
+      return FALSE;
+  }
+  %orig;
 }
 
 -(bool) suppressGuns {
-  return FALSE;
+  if (GetPrefBool(@"kASupp")) {
+    return FALSE;
+  }
+  %orig;
 }
 
 -(void) setSuppressGuns:(bool)arg1 {
-  arg1 = FALSE;
+  if (GetPrefBool(@"kASupp")) {
+    arg1 = FALSE;
+    %orig;
+  }
   %orig;
 }
 
 -(bool) suppressMining {
-  return FALSE;
+  if (GetPrefBool(@"kASupp")) {
+    return FALSE;
+  }
+  %orig;
 }
 
 -(void) setSuppressFlight:(bool)arg1 {
-  arg1 = FALSE;
+  if (GetPrefBool(@"kASupp")) {
+    arg1 = FALSE;
+    %orig;
+  }
   %orig;
 }
 
 -(void) setSuppressMining:(bool)arg1 {
-  arg1 = FALSE;
+  if (GetPrefBool(@"kASupp")) {
+    arg1 = FALSE;
+    %orig;
+  }
   %orig;
 }
 // ANTI-SUPPRESSOR MODULE END
@@ -108,7 +204,10 @@
 %hook WorldZone
 // PHASE MODULE START
 -(bool) isProtected {
-  return FALSE;
+  if (GetPrefBool(@"kPhase")) {
+    return FALSE;
+  }
+  %orig;
 }
 // PHASE MODULE END
 %end
@@ -116,7 +215,10 @@
 %hook BaseBlock
 // PHASE MODULE START
 -(bool) protectedByField {
-  return FALSE;
+  if (GetPrefBool(@"kPhase")) {
+    return FALSE;
+  }
+  %orig;
 }
 // PHASE MODULE END
 %end
@@ -124,20 +226,32 @@
 %hook MetaBlock
 // PHASE MODULE START
 -(bool) ownedByPlayerOrFollower {
-  return TRUE;
+  if (GetPrefBool(@"kPhase")) {
+    return TRUE;
+  }
+  %orig;
 }
 
 -(bool) ownedByPlayer {
-  return TRUE;
+  if (GetPrefBool(@"kPhase")) {
+    return TRUE;
+  }
+  %orig;
 }
 // PHASE MODULE END
 // SURVIVAL MODULE START
 -(float) temperature {
-  return 0;
+  arg1 = 0;
+  if (GetPrefBool(@"kSurvival")) {
+    return 0;
+  }
+  %orig;
 }
 
 -(void) setTemperature:(float)arg1 {
-  arg1 = 0;
+  if (GetPrefBool(@"kSurvival")) {
+    %orig;
+  }
   %orig;
 }
 // SURVIVAL MODULE END
@@ -146,7 +260,10 @@
 %hook CCSpeed
 // SPEED MODULE START
 -(double) speed {
-  return 1.9999999;
+  if (GetPrefBool(@"kSpeed")) {
+    return 1.9999999;
+  }
+  %orig;
 }
 // SPEED MODULE END
 %end
@@ -154,20 +271,33 @@
 %hook Item
 // DAMAGE MODULE START
 -(float) damageAmount {
-  return 1e+32;
+  if (GetPrefBool(@"kDamage")) {
+    return 1e+32;
+  }
+  %orig;
 }
 
 -(float) fieldDamageAmount {
-  return 1e+32;
+  if (GetPrefBool(@"kDamage")) {
+    return 1e+32;
+  }
+  %orig;
 }
 
 -(float) damageRange {
-  return 1e+32;
+  if (GetPrefBool(@"kDamage")) {
+    return 1e+32;
+    %orig;
+  }
+  %orig;
 }
 // DAMAGE MODULE END
 // INVINCIBILITY MODULE START
 -(bool) invulnerable {
-  return TRUE;
+  if (GetPrefBool(@"kInvincibility")) {
+    return TRUE;
+  }
+  %orig;
 }
 // INVINCIBILITY MODULE END
 %end
@@ -175,7 +305,32 @@
 %hook EntityConfig
 // INVINCIBILITY MODULE START
 -(float) collisionDamageAmount {
-  return 0;
+  if (GetPrefBool(@"kInvincibility")) {
+    return 0;
+  }
+  %orig;
 }
 // INVINCIBILITY MODULE END
+%end
+
+%hook FlurryUtil
+// NO DETECT START
++(BOOL) deviceIsJailbroken {
+  if (GetPrefBool(@"kNoDetect")) {
+    return FALSE;
+  }
+  %orig;
+}
+// NO DETECT END
+%end
+
+%hook PFDevice
+// NO DETECT START
+-(bool) isJailbroken {
+  if (GetPrefBool(@"kNoDetect")) {
+    return FALSE;
+  }
+  %orig;
+}
+// NO DETECT END
 %end
