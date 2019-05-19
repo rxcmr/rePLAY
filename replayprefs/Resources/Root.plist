@@ -2,49 +2,28 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>entry</key>
-	<dict>
-		<key>cell</key>
-		<string>PSLinkCell</string>
-		<key>icon</key>
-		<string>icon.png</string>
-		<key>label</key>
-		<string>rePLAY</string>
-	</dict>
 	<key>items</key>
 	<array>
 		<dict>
 			<key>cell</key>
 			<string>PSGroupCell</string>
 			<key>label</key>
-			<string>Admin Module</string>         //this is what will write over the toggle (example the description of the toggle)
+			<string>replayprefs</string>
 		</dict>
 		<dict>
 			<key>cell</key>
 			<string>PSSwitchCell</string>
 			<key>default</key>
-			<false/>
+			<true/>
 			<key>defaults</key>
-			<string>the.overmind.replayprefs</string>                 //insted "xxx" write you bundle (the same in your tweak.xm, but here without ".plist" extension)
+			<string>the.overmind.replayprefs</string>
 			<key>key</key>
-			<string>kAdmin</string>                //must be the same in your tweak.xm
+			<string>kAdmin</string>
 			<key>label</key>
-			<string>Enable</string>       //this is the text that will appear at the left of your toggle
-		</dict>
-		<dict>
-			<key>cell</key>
-			<string>PSGroupCell</string>
-			<key>label</key>
-			<string>Hack by xxx only for xxx</string>
-		</dict>
-		<dict>
-			<key>cell</key>
-			<string>PSTextCell</string>
-			<key>label</key>
-			<string>Visit xxxx for more!</string>
+			<string>Enable</string>
 		</dict>
 	</array>
 	<key>title</key>
-	<string>XXX Hack</string>
+	<string>replayprefs</string>
 </dict>
 </plist>
