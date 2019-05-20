@@ -2,7 +2,7 @@
 // ADMIN MODULE START
 -(void) setAwesomeMode:(bool)arg1 {
   arg1 = TRUE;
-  %orig
+  %orig;
 }
 
 -(bool) admin {
@@ -56,23 +56,23 @@
 
 -(void) environmentalDamage:(int)arg1 amount:(float)arg2 {
   arg2 = 0;
-  %orig
+  %orig;
 }
 // INVINCIBILITY MODULE END
 // COLLISION MODULE START
 -(void) didCollideWithEntity:(id)arg1 {
   arg1 = nil;
-  %orig
+  %orig;
 }
 
 -(void) didCollideFeetWithEntity:(id)arg1 {
   arg1 = nil;
-  %orig
+  %orig;
 }
 
 -(void) slowForEntity:(id)arg1 {
   arg1 = nil;
-  %orig
+  %orig;
 }
 // COLLISION MODULE START
 // ANTI-SUPPRESSOR MODULE START
@@ -86,7 +86,7 @@
 
 -(void) setSuppressGuns:(bool)arg1 {
   arg1 = FALSE;
-  %orig
+  %orig;
 }
 
 -(bool) suppressMining {
@@ -95,12 +95,12 @@
 
 -(void) setSuppressFlight:(bool)arg1 {
   arg1 = FALSE;
-  %orig
+  %orig;
 }
 
 -(void) setSuppressMining:(bool)arg1 {
   arg1 = FALSE;
-  %orig
+  %orig;
 }
 // ANTI-SUPPRESSOR MODULE END
 %end
@@ -138,7 +138,7 @@
 
 -(void) setTemperature:(float)arg1 {
   arg1 = 0;
-  %orig
+  %orig;
 }
 // SURVIVAL MODULE END
 %end
@@ -146,7 +146,7 @@
 %hook CCSpeed
 // SPEED MODULE START
 -(double) speed {
-  return 1.9999999
+  return 1.9999999;
 }
 // SPEED MODULE END
 %end
