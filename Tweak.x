@@ -3,6 +3,7 @@
 #define prefinit NSDictionary *prefs=[[NSDictionary alloc] initWithContentsOfFile:kPath]
 /*
 List of objectForKeys
+kNoDetect
 kAdmin
 kSteam
 kSpeed
@@ -13,7 +14,62 @@ kSurvival
 kASupp
 kCollision
 */
+%hook FlurryUtil
+// NO DETECT MODULE START
++(BOOL) deviceIsJailbroken {
+  prefinit;
+  %orig;
+  if ([[prefs objectForKey:@"kNoDetect"] boolValue]) {
+    return FALSE;
+  }
+  return %orig;
+}
+// NO DETECT MODULE END
+%end
+
+%hook PFDevice
+// NO DETECT MODULE START
+-(bool) isJailbroken {
+  prefinit;
+  %orig;
+  if ([[prefs objectForKey:@"kNoDetect"] boolValue]) {
+    return FALSE;
+  }
+  return %orig;
+}
+// NO DETECT MODULE END
+%end
+
 %hook Player
+// NO DETECT MODULE START
+-(bool) karmaIsPoor {
+  prefinit;
+  %orig;
+  if ([[prefs objectForKey:@"kNoDetect"] boolValue]) {
+    return FALSE;
+  }
+  return %orig;
+}
+
+-(id) karma {
+  prefinit;
+  %orig;
+  if ([[prefs objectForKey:@"kNoDetect"] boolValue]) {
+    return nil;
+  }
+  return %orig;
+}
+
+-(void) setKarma:(id)arg1 {
+  prefinit;
+  %orig;
+  if ([[prefs objectForKey:@"kNoDetect"] boolValue]) {
+    arg1 = nil;
+    %orig;
+  }
+  %orig;
+}
+// NO DETECT MODULE END
 // ADMIN MODULE START
 -(void) setAwesomeMode:(bool)arg1 {
   prefinit;

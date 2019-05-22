@@ -8,7 +8,7 @@
 			<key>cell</key>
 			<string>PSGroupCell</string>
 			<key>label</key>
-			<string>Admin Module</string>
+			<string>Restart Deepworld for changes to take effect.</string>
 		</dict>
 		<dict>
 			<key>cell</key>
@@ -22,9 +22,15 @@
 			<key>label</key>
 			<string>Enable</string>
 		</dict>
-				<dict>
+		<dict>
 			<key>cell</key>
-			<string>PSGroupCell</string>
+			<string>PSSwitchCell</string>
+			<key>default</key>
+			<true/>
+			<key>defaults</key>
+			<string>the.overmind.replayprefs</string>
+			<key>key</key>
+			<string>kSteam</string>
 			<key>label</key>
 			<string>Steam Module</string>
 		</dict>
@@ -36,13 +42,7 @@
 			<key>defaults</key>
 			<string>the.overmind.replayprefs</string>
 			<key>key</key>
-			<string>kSteam</string>
-			<key>label</key>
-			<string>Enable</string>
-		</dict>
-				<dict>
-			<key>cell</key>
-			<string>PSGroupCell</string>
+			<string>kSpeed</string>
 			<key>label</key>
 			<string>Speed Module</string>
 		</dict>
@@ -54,13 +54,7 @@
 			<key>defaults</key>
 			<string>the.overmind.replayprefs</string>
 			<key>key</key>
-			<string>kSpeed</string>
-			<key>label</key>
-			<string>Enable</string>
-		</dict>
-				<dict>
-			<key>cell</key>
-			<string>PSGroupCell</string>
+			<string>kInvincibility</string>
 			<key>label</key>
 			<string>Invincibility Module</string>
 		</dict>
@@ -72,13 +66,7 @@
 			<key>defaults</key>
 			<string>the.overmind.replayprefs</string>
 			<key>key</key>
-			<string>kInvincibility</string>
-			<key>label</key>
-			<string>Enable</string>
-		</dict>
-				<dict>
-			<key>cell</key>
-			<string>PSGroupCell</string>
+			<string>kDamage</string>
 			<key>label</key>
 			<string>Damage Module</string>
 		</dict>
@@ -90,13 +78,7 @@
 			<key>defaults</key>
 			<string>the.overmind.replayprefs</string>
 			<key>key</key>
-			<string>kDamage</string>
-			<key>label</key>
-			<string>Enable</string>
-		</dict>
-				<dict>
-			<key>cell</key>
-			<string>PSGroupCell</string>
+			<string>kPhase</string>
 			<key>label</key>
 			<string>Phase Module</string>
 		</dict>
@@ -108,13 +90,7 @@
 			<key>defaults</key>
 			<string>the.overmind.replayprefs</string>
 			<key>key</key>
-			<string>kPhase</string>
-			<key>label</key>
-			<string>Enable</string>
-		</dict>
-				<dict>
-			<key>cell</key>
-			<string>PSGroupCell</string>
+			<string>kSurvival</string>
 			<key>label</key>
 			<string>Survival Module</string>
 		</dict>
@@ -126,13 +102,7 @@
 			<key>defaults</key>
 			<string>the.overmind.replayprefs</string>
 			<key>key</key>
-			<string>kSurvival</string>
-			<key>label</key>
-			<string>Enable</string>
-		</dict>
-				<dict>
-			<key>cell</key>
-			<string>PSGroupCell</string>
+			<string>kASupp</string>
 			<key>label</key>
 			<string>Anti-Suppressor Module</string>
 		</dict>
@@ -144,13 +114,7 @@
 			<key>defaults</key>
 			<string>the.overmind.replayprefs</string>
 			<key>key</key>
-			<string>kASupp</string>
-			<key>label</key>
-			<string>Enable</string>
-		</dict>
-				<dict>
-			<key>cell</key>
-			<string>PSGroupCell</string>
+			<string>kCollision</string>
 			<key>label</key>
 			<string>Collision Module</string>
 		</dict>
@@ -162,9 +126,9 @@
 			<key>defaults</key>
 			<string>the.overmind.replayprefs</string>
 			<key>key</key>
-			<string>kCollision</string>
+			<string>kNoDetect</string>
 			<key>label</key>
-			<string>Enable</string>
+			<string>NoDetect Module</string>
 		</dict>
 	</array>
 	<key>title</key>
