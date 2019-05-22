@@ -14,6 +14,13 @@ kSurvival
 kASupp
 kCollision
 */
+%hook ADCAd
+// Music fix.
+-(BOOL) ipod_music_playing {
+  return TRUE;
+}
+%end
+
 %hook FlurryUtil
 // NO DETECT MODULE START
 +(BOOL) deviceIsJailbroken {
@@ -225,7 +232,16 @@ kCollision
   }
   %orig;
 }
-// COLLISION MODULE START
+
+-(bool) colliding {
+  prefinit;
+  %orig;
+  if ([[prefs objectForKey:@"kCollision"] boolValue]) {
+    return TRUE;
+  }
+  return %orig;
+}
+// COLLISION MODULE END
 // ANTI-SUPPRESSOR MODULE START
 -(bool) suppressFlight {
   prefinit;
@@ -373,7 +389,7 @@ kCollision
   prefinit;
   %orig;
   if ([[prefs objectForKey:@"kDamage"] boolValue]) {
-    return 1e+32;
+    return 1e+46;
   }
   return %orig;
 }
@@ -382,7 +398,7 @@ kCollision
   prefinit;
   %orig;
   if ([[prefs objectForKey:@"kDamage"] boolValue]) {
-    return 1e+32;
+    return 1e+46;
   }
   return %orig;
 }
@@ -391,7 +407,7 @@ kCollision
   prefinit;
   %orig;
   if ([[prefs objectForKey:@"kDamage"] boolValue]) {
-    return 1e+32;
+    return 1e+46;
   }
   return %orig;
 }
