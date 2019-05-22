@@ -102,9 +102,9 @@
 			<key>defaults</key>
 			<string>the.overmind.replayprefs</string>
 			<key>key</key>
-			<string>kASupp</string>
+			<string>kCollide</string>
 			<key>label</key>
-			<string>Anti-Suppressor Module</string>
+			<string>Collision Module</string>
 		</dict>
 		<dict>
 			<key>cell</key>
@@ -114,9 +114,9 @@
 			<key>defaults</key>
 			<string>the.overmind.replayprefs</string>
 			<key>key</key>
-			<string>kCollide</string>
+			<string>kASupp</string>
 			<key>label</key>
-			<string>Collision Module</string>
+			<string>Anti-Suppressor Module</string>
 		</dict>
 		<dict>
 			<key>cell</key>
