@@ -1,9 +1,9 @@
 Package: the.overmind.replayprefs
 Name: replayprefs
 Depends: mobilesubstrate
-Version: 0.0.1
+Version: 1.0.0
 Architecture: iphoneos-arm
-Description: Proof-of-concept Deepworld hack. 
+Description: Proof-of-concept Deepworld hack.
 Maintainer: fortuneteller2k
 Author: fortuneteller2k
 Section: Tweaks
