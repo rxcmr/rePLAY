@@ -198,7 +198,7 @@ kCollision
 -(void) didCollideWithEntity:(id)arg1 {
   NSDictionary *prefs=[[NSDictionary alloc] initWithContentsOfFile:kPath];
   %orig;
-  if ([[prefs objectForKey:@"kCollision"] boolValue]) {
+  if ([[prefs objectForKey:@"kCollide"] boolValue]) {
     arg1 = nil;
     %orig;
   }
@@ -208,7 +208,7 @@ kCollision
 -(void) didCollideFeetWithEntity:(id)arg1 {
   NSDictionary *prefs=[[NSDictionary alloc] initWithContentsOfFile:kPath];
   %orig;
-  if ([[prefs objectForKey:@"kCollision"] boolValue]) {
+  if ([[prefs objectForKey:@"kCollide"] boolValue]) {
     arg1 = nil;
     %orig;
   }
@@ -218,7 +218,7 @@ kCollision
 -(void) slowForEntity:(id)arg1 {
   NSDictionary *prefs=[[NSDictionary alloc] initWithContentsOfFile:kPath];
   %orig;
-  if ([[prefs objectForKey:@"kCollision"] boolValue]) {
+  if ([[prefs objectForKey:@"kCollide"] boolValue]) {
     arg1 = nil;
     %orig;
   }
@@ -228,7 +228,7 @@ kCollision
 -(bool) colliding {
   NSDictionary *prefs=[[NSDictionary alloc] initWithContentsOfFile:kPath];
   %orig;
-  if ([[prefs objectForKey:@"kCollision"] boolValue]) {
+  if ([[prefs objectForKey:@"kCollide"] boolValue]) {
     return FALSE;
   }
   return %orig;
