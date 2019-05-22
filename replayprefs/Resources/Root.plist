@@ -20,7 +20,7 @@
 			<key>key</key>
 			<string>kAdmin</string>
 			<key>label</key>
-			<string>Enable</string>
+			<string>Admin Module</string>
 		</dict>
 		<dict>
 			<key>cell</key>
