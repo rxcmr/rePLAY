@@ -12,7 +12,7 @@
 }
 
 -(void)killDeepworld {
- void	run_cmd(@"killall -9 Deepworld");
+ 	posix_spawn("killall -9 Deepworld");
 }
 
 @end
