@@ -1,5 +1,6 @@
 #import <Foundation/Foundation.h>
 #define kPath @"/var/mobile/Library/Preferences/the.overmind.replayprefs.plist"
+#define prefinit NSDictionary *prefs=[[NSDictionary alloc] initWithContentsOfFile:kPath]
 /*
 List of objectForKeys
 kNoDetect
@@ -16,7 +17,7 @@ kCollision
 %hook FlurryUtil
 // NO DETECT MODULE START
 +(BOOL) deviceIsJailbroken {
-  NSDictionary *prefs=[[NSDictionary alloc] initWithContentsOfFile:kPath];
+  prefinit;
   %orig;
   if ([[prefs objectForKey:@"kNoDetect"] boolValue]) {
     return FALSE;
@@ -29,7 +30,7 @@ kCollision
 %hook PFDevice
 // NO DETECT MODULE START
 -(bool) isJailbroken {
-  NSDictionary *prefs=[[NSDictionary alloc] initWithContentsOfFile:kPath];
+  prefinit;
   %orig;
   if ([[prefs objectForKey:@"kNoDetect"] boolValue]) {
     return FALSE;
@@ -42,7 +43,7 @@ kCollision
 %hook Player
 // NO DETECT MODULE START
 -(bool) karmaIsPoor {
-  NSDictionary *prefs=[[NSDictionary alloc] initWithContentsOfFile:kPath];
+  prefinit;
   %orig;
   if ([[prefs objectForKey:@"kNoDetect"] boolValue]) {
     return FALSE;
@@ -51,7 +52,7 @@ kCollision
 }
 
 -(id) karma {
-  NSDictionary *prefs=[[NSDictionary alloc] initWithContentsOfFile:kPath];
+  prefinit;
   %orig;
   if ([[prefs objectForKey:@"kNoDetect"] boolValue]) {
     return nil;
@@ -60,7 +61,7 @@ kCollision
 }
 
 -(void) setKarma:(id)arg1 {
-  NSDictionary *prefs=[[NSDictionary alloc] initWithContentsOfFile:kPath];
+  prefinit;
   %orig;
   if ([[prefs objectForKey:@"kNoDetect"] boolValue]) {
     arg1 = nil;
@@ -71,7 +72,7 @@ kCollision
 // NO DETECT MODULE END
 // ADMIN MODULE START
 -(void) setAwesomeMode:(bool)arg1 {
-  NSDictionary *prefs=[[NSDictionary alloc] initWithContentsOfFile:kPath];
+  prefinit;
   %orig;
   if ([[prefs objectForKey:@"kAdmin"] boolValue]) {
     arg1 = TRUE;
@@ -81,7 +82,7 @@ kCollision
 }
 
 -(bool) admin {
-  NSDictionary *prefs=[[NSDictionary alloc] initWithContentsOfFile:kPath];
+  prefinit;
   %orig;
   if ([[prefs objectForKey:@"kAdmin"] boolValue]) {
     return TRUE;
@@ -91,7 +92,7 @@ kCollision
 // ADMIN MODULE END
 // STEAM MODULE START
 -(bool) hasSteam {
-  NSDictionary *prefs=[[NSDictionary alloc] initWithContentsOfFile:kPath];
+  prefinit;
   %orig;
   if ([[prefs objectForKey:@"kSteam"] boolValue]) {
     return TRUE;
@@ -100,7 +101,7 @@ kCollision
 }
 
 -(double) steamCooldownDuration {
-  NSDictionary *prefs=[[NSDictionary alloc] initWithContentsOfFile:kPath];
+  prefinit;
   %orig;
   if ([[prefs objectForKey:@"kSteam"] boolValue]) {
     return 0;
@@ -110,7 +111,7 @@ kCollision
 // STEAM MODULE END
 // SPEED MODULE START
 -(float) miningSpeed {
-  NSDictionary *prefs=[[NSDictionary alloc] initWithContentsOfFile:kPath];
+  prefinit;
   %orig;
   if ([[prefs objectForKey:@"kSpeed"] boolValue]) {
     return 1.9999999;
@@ -119,7 +120,7 @@ kCollision
 }
 
 -(float) swimmingSpeed {
-  NSDictionary *prefs=[[NSDictionary alloc] initWithContentsOfFile:kPath];
+  prefinit;
   %orig;
   if ([[prefs objectForKey:@"kSpeed"] boolValue]) {
     return 1.9999999;
@@ -128,7 +129,7 @@ kCollision
 }
 
 -(float) climbingSpeed {
-  NSDictionary *prefs=[[NSDictionary alloc] initWithContentsOfFile:kPath];
+  prefinit;
   %orig;
   if ([[prefs objectForKey:@"kSpeed"] boolValue]) {
     return 1.9999999;
@@ -137,7 +138,7 @@ kCollision
 }
 
 -(float) runningSpeed {
-  NSDictionary *prefs=[[NSDictionary alloc] initWithContentsOfFile:kPath];
+  prefinit;
   %orig;
   if ([[prefs objectForKey:@"kSpeed"] boolValue]) {
     return 1.9999999;
@@ -146,7 +147,7 @@ kCollision
 }
 
 -(float) flyingSpeed {
-  NSDictionary *prefs=[[NSDictionary alloc] initWithContentsOfFile:kPath];
+  prefinit;
   %orig;
   if ([[prefs objectForKey:@"kSpeed"] boolValue]) {
     return 1.9999999;
@@ -156,7 +157,7 @@ kCollision
 // SPEED MODULE END
 // DAMAGE MODULE START
 -(bool) damage:(int)arg1 amount:(float)arg2 attacker:(id)arg3 {
-  NSDictionary *prefs=[[NSDictionary alloc] initWithContentsOfFile:kPath];
+  prefinit;
   %orig;
   if ([[prefs objectForKey:@"kDamage"] boolValue]) {
     arg2 = 99;
@@ -166,7 +167,7 @@ kCollision
 }
 
 -(float) gunEfficiency {
-  NSDictionary *prefs=[[NSDictionary alloc] initWithContentsOfFile:kPath];
+  prefinit;
   %orig;
   if ([[prefs objectForKey:@"kDamage"] boolValue]) {
     return 20;
@@ -176,7 +177,7 @@ kCollision
 // DAMAGE MODULE END
 // INVINCIBILITY MODULE START
 -(bool) canBeDamaged {
-  NSDictionary *prefs=[[NSDictionary alloc] initWithContentsOfFile:kPath];
+  prefinit;
   %orig;
   if ([[prefs objectForKey:@"kInvincibility"] boolValue]) {
     return FALSE;
@@ -185,7 +186,7 @@ kCollision
 }
 
 -(void) environmentalDamage:(int)arg1 amount:(float)arg2 {
-  NSDictionary *prefs=[[NSDictionary alloc] initWithContentsOfFile:kPath];
+  prefinit;
   %orig;
   if ([[prefs objectForKey:@"kInvincibility"] boolValue]) {
     arg2 = 0;
@@ -196,7 +197,7 @@ kCollision
 // INVINCIBILITY MODULE END
 // COLLISION MODULE START
 -(void) didCollideWithEntity:(id)arg1 {
-  NSDictionary *prefs=[[NSDictionary alloc] initWithContentsOfFile:kPath];
+  prefinit;
   %orig;
   if ([[prefs objectForKey:@"kCollision"] boolValue]) {
     arg1 = nil;
@@ -206,7 +207,7 @@ kCollision
 }
 
 -(void) didCollideFeetWithEntity:(id)arg1 {
-  NSDictionary *prefs=[[NSDictionary alloc] initWithContentsOfFile:kPath];
+  prefinit;
   %orig;
   if ([[prefs objectForKey:@"kCollision"] boolValue]) {
     arg1 = nil;
@@ -216,7 +217,7 @@ kCollision
 }
 
 -(void) slowForEntity:(id)arg1 {
-  NSDictionary *prefs=[[NSDictionary alloc] initWithContentsOfFile:kPath];
+  prefinit;
   %orig;
   if ([[prefs objectForKey:@"kCollision"] boolValue]) {
     arg1 = nil;
@@ -226,17 +227,17 @@ kCollision
 }
 
 -(bool) colliding {
-  NSDictionary *prefs=[[NSDictionary alloc] initWithContentsOfFile:kPath];
+  prefinit;
   %orig;
   if ([[prefs objectForKey:@"kCollision"] boolValue]) {
-    return TRUE;
+    return FALSE;
   }
   return %orig;
 }
 // COLLISION MODULE END
 // ANTI-SUPPRESSOR MODULE START
 -(bool) suppressFlight {
-  NSDictionary *prefs=[[NSDictionary alloc] initWithContentsOfFile:kPath];
+  prefinit;
   %orig;
   if ([[prefs objectForKey:@"kASupp"] boolValue]) {
     return FALSE;
@@ -245,7 +246,7 @@ kCollision
 }
 
 -(bool) suppressGuns {
-  NSDictionary *prefs=[[NSDictionary alloc] initWithContentsOfFile:kPath];
+  prefinit;
   %orig;
   if ([[prefs objectForKey:@"kASupp"] boolValue]) {
     return FALSE;
@@ -254,7 +255,7 @@ kCollision
 }
 
 -(void) setSuppressGuns:(bool)arg1 {
-  NSDictionary *prefs=[[NSDictionary alloc] initWithContentsOfFile:kPath];
+  prefinit;
   %orig;
   if ([[prefs objectForKey:@"kASupp"] boolValue]) {
     arg1 = FALSE;
@@ -264,7 +265,7 @@ kCollision
 }
 
 -(bool) suppressMining {
-  NSDictionary *prefs=[[NSDictionary alloc] initWithContentsOfFile:kPath];
+  prefinit;
   %orig;
   if ([[prefs objectForKey:@"kASupp"] boolValue]) {
     return FALSE;
@@ -273,7 +274,7 @@ kCollision
 }
 
 -(void) setSuppressFlight:(bool)arg1 {
-  NSDictionary *prefs=[[NSDictionary alloc] initWithContentsOfFile:kPath];
+  prefinit;
   %orig;
   if ([[prefs objectForKey:@"kASupp"] boolValue]) {
     arg1 = FALSE;
@@ -283,7 +284,7 @@ kCollision
 }
 
 -(void) setSuppressMining:(bool)arg1 {
-  NSDictionary *prefs=[[NSDictionary alloc] initWithContentsOfFile:kPath];
+  prefinit;
   %orig;
   if ([[prefs objectForKey:@"kASupp"] boolValue]) {
     arg1 = FALSE;
@@ -297,7 +298,7 @@ kCollision
 %hook WorldZone
 // PHASE MODULE START
 -(bool) isProtected {
-  NSDictionary *prefs=[[NSDictionary alloc] initWithContentsOfFile:kPath];
+  prefinit;
   %orig;
   if ([[prefs objectForKey:@"kPhase"] boolValue]) {
     return FALSE;
@@ -310,7 +311,7 @@ kCollision
 %hook BaseBlock
 // PHASE MODULE START
 -(bool) protectedByField {
-  NSDictionary *prefs=[[NSDictionary alloc] initWithContentsOfFile:kPath];
+  prefinit;
   %orig;
   if ([[prefs objectForKey:@"kPhase"] boolValue]) {
     return FALSE;
@@ -323,7 +324,7 @@ kCollision
 %hook MetaBlock
 // PHASE MODULE START
 -(bool) ownedByPlayerOrFollower {
-  NSDictionary *prefs=[[NSDictionary alloc] initWithContentsOfFile:kPath];
+  prefinit;
   %orig;
   if ([[prefs objectForKey:@"kPhase"] boolValue]) {
     return TRUE;
@@ -332,7 +333,7 @@ kCollision
 }
 
 -(bool) ownedByPlayer {
-  NSDictionary *prefs=[[NSDictionary alloc] initWithContentsOfFile:kPath];
+  prefinit;
   %orig;
   if ([[prefs objectForKey:@"kPhase"] boolValue]) {
     return TRUE;
@@ -342,7 +343,7 @@ kCollision
 // PHASE MODULE END
 // SURVIVAL MODULE START
 -(float) temperature {
-  NSDictionary *prefs=[[NSDictionary alloc] initWithContentsOfFile:kPath];
+  prefinit;
   %orig;
   if ([[prefs objectForKey:@"kSurvival"] boolValue]) {
     return 0;
@@ -351,7 +352,7 @@ kCollision
 }
 
 -(void) setTemperature:(float)arg1 {
-  NSDictionary *prefs=[[NSDictionary alloc] initWithContentsOfFile:kPath];
+  prefinit;
   %orig;
   if ([[prefs objectForKey:@"kSurvival"] boolValue]) {
     arg1 = 0;
@@ -365,7 +366,7 @@ kCollision
 %hook CCSpeed
 // SPEED MODULE START
 -(double) speed {
-  NSDictionary *prefs=[[NSDictionary alloc] initWithContentsOfFile:kPath];
+  prefinit;
   %orig;
   if ([[prefs objectForKey:@"kSpeed"] boolValue]) {
     return 1.9999999;
@@ -378,7 +379,7 @@ kCollision
 %hook Item
 // DAMAGE MODULE START
 -(float) damageAmount {
-  NSDictionary *prefs=[[NSDictionary alloc] initWithContentsOfFile:kPath];
+  prefinit;
   %orig;
   if ([[prefs objectForKey:@"kDamage"] boolValue]) {
     return 1e+46;
@@ -387,7 +388,7 @@ kCollision
 }
 
 -(float) fieldDamageAmount {
-  NSDictionary *prefs=[[NSDictionary alloc] initWithContentsOfFile:kPath];
+  prefinit;
   %orig;
   if ([[prefs objectForKey:@"kDamage"] boolValue]) {
     return 1e+46;
@@ -396,7 +397,7 @@ kCollision
 }
 
 -(float) damageRange {
-  NSDictionary *prefs=[[NSDictionary alloc] initWithContentsOfFile:kPath];
+  prefinit;
   %orig;
   if ([[prefs objectForKey:@"kDamage"] boolValue]) {
     return 1e+46;
@@ -406,7 +407,7 @@ kCollision
 // DAMAGE MODULE END
 // INVINCIBILITY MODULE START
 -(bool) invulnerable {
-  NSDictionary *prefs=[[NSDictionary alloc] initWithContentsOfFile:kPath];
+  prefinit;
   %orig;
   if ([[prefs objectForKey:@"kInvincibility"] boolValue]) {
     return TRUE;
@@ -419,7 +420,7 @@ kCollision
 %hook EntityConfig
 // INVINCIBILITY MODULE START
 -(float) collisionDamageAmount {
-  NSDictionary *prefs=[[NSDictionary alloc] initWithContentsOfFile:kPath];
+  prefinit;
   %orig;
   if ([[prefs objectForKey:@"kInvincibility"] boolValue]) {
     return 0;
