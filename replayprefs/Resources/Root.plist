@@ -114,7 +114,7 @@
 			<key>defaults</key>
 			<string>the.overmind.replayprefs</string>
 			<key>key</key>
-			<string>kCollision</string>
+			<string>kCollide</string>
 			<key>label</key>
 			<string>Collision Module</string>
 		</dict>
