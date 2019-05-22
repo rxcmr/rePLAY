@@ -11,7 +11,7 @@ kDamage
 kPhase
 kSurvival
 kASupp
-kCollision
+kCollide
 */
 %hook FlurryUtil
 // NO DETECT MODULE START
