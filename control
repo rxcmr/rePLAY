@@ -1,7 +1,7 @@
 Package: the.overmind.replay
 Name: rePLAY
 Depends: mobilesubstrate
-Version: 1.2.1
+Version: 1.2.2
 Architecture: iphoneos-arm
 Description: Proof-of-concept Deepworld hack.
 Maintainer: fortuneteller2k
