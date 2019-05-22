@@ -11,7 +11,6 @@ kDamage
 kPhase
 kSurvival
 kASupp
-kCollide
 */
 %hook FlurryUtil
 // NO DETECT MODULE START
@@ -196,42 +195,22 @@ kCollide
 // INVINCIBILITY MODULE END
 // COLLISION MODULE START
 -(void) didCollideWithEntity:(id)arg1 {
-  NSDictionary *prefs=[[NSDictionary alloc] initWithContentsOfFile:kPath];
-  %orig;
-  if ([[prefs objectForKey:@"kCollide"] boolValue]) {
-    arg1 = nil;
-    %orig;
-  }
+  arg1 = nil;
   %orig;
 }
 
 -(void) didCollideFeetWithEntity:(id)arg1 {
-  NSDictionary *prefs=[[NSDictionary alloc] initWithContentsOfFile:kPath];
-  %orig;
-  if ([[prefs objectForKey:@"kCollide"] boolValue]) {
-    arg1 = nil;
-    %orig;
-  }
+  arg1 = nil;
   %orig;
 }
 
 -(void) slowForEntity:(id)arg1 {
-  NSDictionary *prefs=[[NSDictionary alloc] initWithContentsOfFile:kPath];
-  %orig;
-  if ([[prefs objectForKey:@"kCollide"] boolValue]) {
-    arg1 = nil;
-    %orig;
-  }
+  arg1 = nil;
   %orig;
 }
 
 -(bool) colliding {
-  NSDictionary *prefs=[[NSDictionary alloc] initWithContentsOfFile:kPath];
-  %orig;
-  if ([[prefs objectForKey:@"kCollide"] boolValue]) {
-    return FALSE;
-  }
-  return %orig;
+  return FALSE;
 }
 // COLLISION MODULE END
 // ANTI-SUPPRESSOR MODULE START
