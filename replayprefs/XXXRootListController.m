@@ -12,7 +12,7 @@
 }
 
 -(void)killDeepworld {
-	run_cmd("killall -9 Deepworld");
+ void	run_cmd("killall -9 Deepworld");
 }
 
 @end
