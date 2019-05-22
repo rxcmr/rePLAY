@@ -1,7 +1,7 @@
 Package: the.overmind.replayprefs
 Name: replayprefs
 Depends: mobilesubstrate
-Version: 1.1.0
+Version: 1.2.0
 Architecture: iphoneos-arm
 Description: Proof-of-concept Deepworld hack. Also stops the music from stopping!
 Maintainer: fortuneteller2k
