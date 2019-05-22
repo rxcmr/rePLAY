@@ -102,18 +102,6 @@
 			<key>defaults</key>
 			<string>the.overmind.replayprefs</string>
 			<key>key</key>
-			<string>kCollide</string>
-			<key>label</key>
-			<string>Collision Module</string>
-		</dict>
-		<dict>
-			<key>cell</key>
-			<string>PSSwitchCell</string>
-			<key>default</key>
-			<true/>
-			<key>defaults</key>
-			<string>the.overmind.replayprefs</string>
-			<key>key</key>
 			<string>kASupp</string>
 			<key>label</key>
 			<string>Anti-Suppressor Module</string>
