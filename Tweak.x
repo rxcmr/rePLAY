@@ -14,13 +14,6 @@ kSurvival
 kASupp
 kCollision
 */
-%hook ADCAd
-// Music fix.
--(BOOL) ipod_music_playing {
-  return TRUE;
-}
-%end
-
 %hook FlurryUtil
 // NO DETECT MODULE START
 +(BOOL) deviceIsJailbroken {

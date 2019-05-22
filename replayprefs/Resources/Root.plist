@@ -130,6 +130,14 @@
 			<key>label</key>
 			<string>NoDetect Module</string>
 		</dict>
+		<dict>
+			<key>cell</key>
+			<string>PSButtonCell</string>
+			<key>label</key>
+			<string>Restart Deepworld</string>
+			<key>action</key>
+			<string>killDeepworld</string>
+		</dict>
 	</array>
 	<key>title</key>
 	<string>rePLAY</string>

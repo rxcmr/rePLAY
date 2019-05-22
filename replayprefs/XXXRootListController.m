@@ -10,4 +10,8 @@
 	return _specifiers;
 }
 
+-(void)killDeepworld {
+	system("killall -9 Deepworld");
+}
+
 @end
