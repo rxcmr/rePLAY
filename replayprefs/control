@@ -3,7 +3,7 @@ Name: replayprefs
 Depends: mobilesubstrate
 Version: 1.2.0
 Architecture: iphoneos-arm
-Description: Proof-of-concept Deepworld hack. Also stops the music from stopping!
+Description: Proof-of-concept Deepworld hack.
 Maintainer: fortuneteller2k
 Author: fortuneteller2k
 Section: Tweaks
