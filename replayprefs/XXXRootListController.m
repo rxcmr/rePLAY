@@ -1,3 +1,4 @@
+#include <spawn.h>
 #include "XXXRootListController.h"
 
 @implementation XXXRootListController
