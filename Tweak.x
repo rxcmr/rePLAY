@@ -361,7 +361,7 @@ kASupp
   prefinit;
   %orig;
   if ([[prefs objectForKey:@"kDamage"] boolValue]) {
-    return 1e+46;
+    return 1e+300;
   }
   return %orig;
 }
@@ -370,7 +370,7 @@ kASupp
   prefinit;
   %orig;
   if ([[prefs objectForKey:@"kDamage"] boolValue]) {
-    return 1e+46;
+    return 1e+300;
   }
   return %orig;
 }
@@ -379,7 +379,7 @@ kASupp
   prefinit;
   %orig;
   if ([[prefs objectForKey:@"kDamage"] boolValue]) {
-    return 1e+46;
+    return 1e+300;
   }
   return %orig;
 }
