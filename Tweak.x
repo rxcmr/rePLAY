@@ -19,7 +19,7 @@ kASupp
   prefinit;
   %orig;
   if ([[prefs objectForKey:@"kNoDetect"] boolValue]) {
-    return FALSE;
+    return NO;
   }
   return %orig;
 }
@@ -32,7 +32,7 @@ kASupp
   prefinit;
   %orig;
   if ([[prefs objectForKey:@"kNoDetect"] boolValue]) {
-    return FALSE;
+    return NO;
   }
   return %orig;
 }
@@ -45,7 +45,7 @@ kASupp
   prefinit;
   %orig;
   if ([[prefs objectForKey:@"kNoDetect"] boolValue]) {
-    return FALSE;
+    return NO;
   }
   return %orig;
 }
@@ -74,7 +74,7 @@ kASupp
   prefinit;
   %orig;
   if ([[prefs objectForKey:@"kAdmin"] boolValue]) {
-    arg1 = TRUE;
+    arg1 = YES;
     %orig;
   }
   %orig;
@@ -84,7 +84,7 @@ kASupp
   prefinit;
   %orig;
   if ([[prefs objectForKey:@"kAdmin"] boolValue]) {
-    return TRUE;
+    return YES;
   }
   return %orig;
 }
@@ -94,7 +94,7 @@ kASupp
   prefinit;
   %orig;
   if ([[prefs objectForKey:@"kSteam"] boolValue]) {
-    return TRUE;
+    return YES;
   }
   return %orig;
 }
@@ -179,7 +179,7 @@ kASupp
   prefinit;
   %orig;
   if ([[prefs objectForKey:@"kInvincibility"] boolValue]) {
-    return FALSE;
+    return NO;
   }
   return %orig;
 }
@@ -211,7 +211,7 @@ kASupp
 }
 
 -(bool) colliding {
-  return FALSE;
+  return NO;
 }
 // COLLISION MODULE END
 // ANTI-SUPPRESSOR MODULE START
@@ -219,7 +219,7 @@ kASupp
   prefinit;
   %orig;
   if ([[prefs objectForKey:@"kASupp"] boolValue]) {
-    return FALSE;
+    return NO;
   }
   return %orig;
 }
@@ -228,7 +228,7 @@ kASupp
   prefinit;
   %orig;
   if ([[prefs objectForKey:@"kASupp"] boolValue]) {
-    return FALSE;
+    return NO;
   }
   return %orig;
 }
@@ -237,7 +237,7 @@ kASupp
   prefinit;
   %orig;
   if ([[prefs objectForKey:@"kASupp"] boolValue]) {
-    arg1 = FALSE;
+    arg1 = NO;
     %orig;
   }
   %orig;
@@ -247,7 +247,7 @@ kASupp
   prefinit;
   %orig;
   if ([[prefs objectForKey:@"kASupp"] boolValue]) {
-    return FALSE;
+    return NO;
   }
   return %orig;
 }
@@ -256,7 +256,7 @@ kASupp
   prefinit;
   %orig;
   if ([[prefs objectForKey:@"kASupp"] boolValue]) {
-    arg1 = FALSE;
+    arg1 = NO;
     %orig;
   }
   %orig;
@@ -266,7 +266,7 @@ kASupp
   prefinit;
   %orig;
   if ([[prefs objectForKey:@"kASupp"] boolValue]) {
-    arg1 = FALSE;
+    arg1 = NO;
     %orig;
   }
   %orig;
@@ -280,7 +280,7 @@ kASupp
   prefinit;
   %orig;
   if ([[prefs objectForKey:@"kPhase"] boolValue]) {
-    return FALSE;
+    return NO;
   }
   return %orig;
 }
@@ -293,7 +293,7 @@ kASupp
   prefinit;
   %orig;
   if ([[prefs objectForKey:@"kPhase"] boolValue]) {
-    return FALSE;
+    return NO;
   }
   return %orig;
 }
@@ -306,7 +306,7 @@ kASupp
   prefinit;
   %orig;
   if ([[prefs objectForKey:@"kPhase"] boolValue]) {
-    return TRUE;
+    return YES;
   }
   return %orig;
 }
@@ -315,7 +315,7 @@ kASupp
   prefinit;
   %orig;
   if ([[prefs objectForKey:@"kPhase"] boolValue]) {
-    return TRUE;
+    return YES;
   }
   return %orig;
 }
@@ -389,7 +389,7 @@ kASupp
   prefinit;
   %orig;
   if ([[prefs objectForKey:@"kInvincibility"] boolValue]) {
-    return TRUE;
+    return YES;
   }
   return %orig;
 }

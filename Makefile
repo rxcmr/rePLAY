@@ -1,4 +1,4 @@
-ARCHS = armv7 arm64
+ARCHS = armv7 armv7s arm64
 
 INSTALL_TARGET_PROCESSES = Deepworld
 
