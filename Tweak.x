@@ -3,6 +3,7 @@
 #define prefinit NSDictionary *prefs=[[NSDictionary alloc] initWithContentsOfFile:kPath]
 /*
 List of objectForKeys
+kAirWalk
 kNoClip
 kNoDetect
 kAdmin
@@ -14,6 +15,28 @@ kPhase
 kSurvival
 kASupp
 */
+%hook Entity
+// AIR WALK MODULE START
+-(BOOL) grounded {
+  prefinit;
+  %orig;
+  if ([[prefs objectForKey:@"kAirWalk"] boolValue]) {
+    return YES;
+  }
+  return %orig;
+}
+
+-(void)setGrounded:(BOOL)arg1 {
+  prefinit;
+  %orig;
+  if ([[prefs objectForKey:@"kAirWalk"] boolValue]) {
+    arg1 = YES;
+  }
+  %orig;
+}
+// AIR WALK END
+%end
+
 %hook FlurryUtil
 // NO DETECT MODULE START
 +(BOOL) deviceIsJailbroken {
