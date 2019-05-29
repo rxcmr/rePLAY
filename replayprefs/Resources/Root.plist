@@ -120,11 +120,37 @@
 		</dict>
 		<dict>
 			<key>cell</key>
+			<string>PSSwitchCell</string>
+			<key>default</key>
+			<true/>
+			<key>defaults</key>
+			<string>the.overmind.replayprefs</string>
+			<key>key</key>
+			<string>kNoClip</string>
+			<key>label</key>
+			<string>Noclip Module</string>
+		</dict>
+		<dict>
+			<key>cell</key>
+			<string>PSGroupCell</string>
+			<key>label</key>
+			<string>Only use noclip for getting through. It gives karma for mining.</string>
+		</dict>
+		<dict>
+			<key>cell</key>
 			<string>PSButtonCell</string>
 			<key>label</key>
 			<string>Restart Deepworld</string>
 			<key>action</key>
 			<string>killDeepworld</string>
+		</dict>
+		<dict>
+			<key>cell</key>
+			<string>PSButtonCell</string>
+			<key>label</key>
+			<string>Restart backboardd</string>
+			<key>action</key>
+			<string>killbackboardd</string>
 		</dict>
 	</array>
 	<key>title</key>

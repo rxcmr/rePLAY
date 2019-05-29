@@ -3,6 +3,7 @@
 #define prefinit NSDictionary *prefs=[[NSDictionary alloc] initWithContentsOfFile:kPath]
 /*
 List of objectForKeys
+kNoClip
 kNoDetect
 kAdmin
 kSteam
@@ -275,6 +276,16 @@ kASupp
 %end
 
 %hook WorldZone
+// NOCLIP MODULE START
+-(int) adminLoad {
+  prefinit;
+  %orig
+  if ([[prefs objectForKey:@"kNoClip"] boolValue]) {
+    return 1;
+  }
+  return %orig;
+}
+// NOCLIP MODULE END
 // PHASE MODULE START
 -(bool) isProtected {
   prefinit;

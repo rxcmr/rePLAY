@@ -3,7 +3,7 @@
 
 @implementation XXXRootListController
 
-- (NSArray *)specifiers {
+-(NSArray *)specifiers {
 	if (!_specifiers) {
 		_specifiers = [[self loadSpecifiersFromPlistName:@"Root" target:self] retain];
 	}
@@ -16,7 +16,15 @@
 	int status;
 	const char* args[] = {"killall", "-9", "Deepworld", NULL};
 	posix_spawn(&pid, "/usr/bin/killall", NULL, NULL, (char* const*)args, NULL);
-	waitpid(pid, &status, WEXITED); 
+	waitpid(pid, &status, WEXITED);
+}
+
+-(void)killbackboardd {
+	pid_t pid;
+	int status;
+	const char* args[] = {"killall", "-9", "backboardd", NULL};
+	posix_spawn(&pid, "/usr/bin/killall", NULL, NULL, (char* const*)args, NULL);
+	waitpid(pid, &status, WEXITED);
 }
 
 @end
