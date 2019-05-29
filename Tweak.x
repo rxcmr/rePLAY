@@ -279,7 +279,7 @@ kASupp
 // NOCLIP MODULE START
 -(int) adminLoad {
   prefinit;
-  %orig
+  %orig;
   if ([[prefs objectForKey:@"kNoClip"] boolValue]) {
     return 1;
   }
