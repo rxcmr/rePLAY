@@ -458,7 +458,7 @@ kASupp
   prefinit;
   %orig;
   if ([[prefobject:@"kPowerMine"] boolValue]) {
-    return 1.9999999;
+    return 4.9999999;
   }
   return %orig;
 }
