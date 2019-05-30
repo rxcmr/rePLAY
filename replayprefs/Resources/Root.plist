@@ -144,9 +144,15 @@
 		</dict>
 		<dict>
 			<key>cell</key>
-			<string>PSGroupCell</string>
+			<string>PSSwitchCell</string>
+			<key>default</key>
+			<false/>
+			<key>defaults</key>
+			<string>the.overmind.replayprefs</string>
+			<key>key</key>
+			<string>kPowerMine</string>
 			<key>label</key>
-			<string>Only use noclip for getting through and searching. It gives karma for continuous mining.</string>
+			<string>Power Mine Module</string>
 		</dict>
 		<dict>
 			<key>cell</key>

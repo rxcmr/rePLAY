@@ -1,8 +1,10 @@
 #import <Foundation/Foundation.h>
 #define kPath @"/var/mobile/Library/Preferences/the.overmind.replayprefs.plist"
 #define prefinit NSDictionary *prefs=[[NSDictionary alloc] initWithContentsOfFile:kPath]
+#define prefobject prefs objectForKey
 /*
-List of objectForKeys
+List of prefobjects
+kPowerMine
 kAirWalk
 kNoClip
 kNoDetect
@@ -15,12 +17,64 @@ kPhase
 kSurvival
 kASupp
 */
+%hook GameCommand
+// ADMIN MODULE START
++(bool) consoleRequiresAdmin {
+  prefinit;
+  %orig;
+  if ([[prefobject:@"kAdmin"] boolValue]) {
+    return NO;
+  }
+  return %orig;
+}
+// ADMIN MODULE END
+%end
+
+%hook GameCommandSay
+// ADMIN MODULE START
++(bool) consoleRequiresAdmin {
+  prefinit;
+  %orig;
+  if ([[prefobject:@"kAdmin"] boolValue]) {
+    return NO;
+  }
+  return %orig;
+}
+// ADMIN MODULE END
+%end
+
+%hook GameCommandPlayerDie
+// ADMIN MODULE START
++(bool) consoleRequiresAdmin {
+  prefinit;
+  %orig;
+  if ([[prefobject:@"kAdmin"] boolValue]) {
+    return NO;
+  }
+  return %orig;
+}
+// ADMIN MODULE END
+%end
+
+%hook GameCommandDebug
+// ADMIN MODULE START
++(bool) consoleRequiresAdmin {
+  prefinit;
+  %orig;
+  if ([[prefobject:@"kAdmin"] boolValue]) {
+    return NO;
+  }
+  return %orig;
+}
+// ADMIN MODULE END
+%end
+
 %hook Entity
 // AIR WALK MODULE START
 -(BOOL) grounded {
   prefinit;
   %orig;
-  if ([[prefs objectForKey:@"kAirWalk"] boolValue]) {
+  if ([[prefobject:@"kAirWalk"] boolValue]) {
     return YES;
   }
   return %orig;
@@ -29,7 +83,7 @@ kASupp
 -(void)setGrounded:(BOOL)arg1 {
   prefinit;
   %orig;
-  if ([[prefs objectForKey:@"kAirWalk"] boolValue]) {
+  if ([[prefobject:@"kAirWalk"] boolValue]) {
     arg1 = YES;
   }
   %orig;
@@ -42,7 +96,7 @@ kASupp
 +(BOOL) deviceIsJailbroken {
   prefinit;
   %orig;
-  if ([[prefs objectForKey:@"kNoDetect"] boolValue]) {
+  if ([[prefobject:@"kNoDetect"] boolValue]) {
     return NO;
   }
   return %orig;
@@ -55,7 +109,7 @@ kASupp
 -(bool) isJailbroken {
   prefinit;
   %orig;
-  if ([[prefs objectForKey:@"kNoDetect"] boolValue]) {
+  if ([[prefobject:@"kNoDetect"] boolValue]) {
     return NO;
   }
   return %orig;
@@ -68,7 +122,7 @@ kASupp
 -(bool) karmaIsPoor {
   prefinit;
   %orig;
-  if ([[prefs objectForKey:@"kNoDetect"] boolValue]) {
+  if ([[prefobject:@"kNoDetect"] boolValue]) {
     return NO;
   }
   return %orig;
@@ -77,7 +131,7 @@ kASupp
 -(id) karma {
   prefinit;
   %orig;
-  if ([[prefs objectForKey:@"kNoDetect"] boolValue]) {
+  if ([[prefobject:@"kNoDetect"] boolValue]) {
     return nil;
   }
   return %orig;
@@ -86,7 +140,7 @@ kASupp
 -(void) setKarma:(id)arg1 {
   prefinit;
   %orig;
-  if ([[prefs objectForKey:@"kNoDetect"] boolValue]) {
+  if ([[prefobject:@"kNoDetect"] boolValue]) {
     arg1 = nil;
     %orig;
   }
@@ -97,7 +151,7 @@ kASupp
 -(void) setAwesomeMode:(bool)arg1 {
   prefinit;
   %orig;
-  if ([[prefs objectForKey:@"kAdmin"] boolValue]) {
+  if ([[prefobject:@"kAdmin"] boolValue]) {
     arg1 = YES;
     %orig;
   }
@@ -107,7 +161,7 @@ kASupp
 -(bool) admin {
   prefinit;
   %orig;
-  if ([[prefs objectForKey:@"kAdmin"] boolValue]) {
+  if ([[prefobject:@"kAdmin"] boolValue]) {
     return YES;
   }
   return %orig;
@@ -117,7 +171,7 @@ kASupp
 -(bool) hasSteam {
   prefinit;
   %orig;
-  if ([[prefs objectForKey:@"kSteam"] boolValue]) {
+  if ([[prefobject:@"kSteam"] boolValue]) {
     return YES;
   }
   return %orig;
@@ -126,7 +180,7 @@ kASupp
 -(double) steamCooldownDuration {
   prefinit;
   %orig;
-  if ([[prefs objectForKey:@"kSteam"] boolValue]) {
+  if ([[prefobject:@"kSteam"] boolValue]) {
     return 0;
   }
   return %orig;
@@ -136,7 +190,7 @@ kASupp
 -(float) miningSpeed {
   prefinit;
   %orig;
-  if ([[prefs objectForKey:@"kSpeed"] boolValue]) {
+  if ([[prefobject:@"kSpeed"] boolValue]) {
     return 1.9999999;
   }
   return %orig;
@@ -145,7 +199,7 @@ kASupp
 -(float) swimmingSpeed {
   prefinit;
   %orig;
-  if ([[prefs objectForKey:@"kSpeed"] boolValue]) {
+  if ([[prefobject:@"kSpeed"] boolValue]) {
     return 1.9999999;
   }
   return %orig;
@@ -154,7 +208,7 @@ kASupp
 -(float) climbingSpeed {
   prefinit;
   %orig;
-  if ([[prefs objectForKey:@"kSpeed"] boolValue]) {
+  if ([[prefobject:@"kSpeed"] boolValue]) {
     return 1.9999999;
   }
   return %orig;
@@ -163,7 +217,7 @@ kASupp
 -(float) runningSpeed {
   prefinit;
   %orig;
-  if ([[prefs objectForKey:@"kSpeed"] boolValue]) {
+  if ([[prefobject:@"kSpeed"] boolValue]) {
     return 1.9999999;
   }
   return %orig;
@@ -172,17 +226,26 @@ kASupp
 -(float) flyingSpeed {
   prefinit;
   %orig;
-  if ([[prefs objectForKey:@"kSpeed"] boolValue]) {
+  if ([[prefobject:@"kSpeed"] boolValue]) {
     return 1.9999999;
   }
   return %orig;
 }
 // SPEED MODULE END
 // DAMAGE MODULE START
+-(float) aimSteadiness {
+  prefinit;
+  %orig;
+  if ([[prefobject:@"kDamage"] boolValue]) {
+    return 1e+300;
+  }
+  return %orig;
+}
+
 -(bool) damage:(int)arg1 amount:(float)arg2 attacker:(id)arg3 {
   prefinit;
   %orig;
-  if ([[prefs objectForKey:@"kDamage"] boolValue]) {
+  if ([[prefobject:@"kDamage"] boolValue]) {
     arg2 = 99;
     return %orig;
   }
@@ -192,7 +255,7 @@ kASupp
 -(float) gunEfficiency {
   prefinit;
   %orig;
-  if ([[prefs objectForKey:@"kDamage"] boolValue]) {
+  if ([[prefobject:@"kDamage"] boolValue]) {
     return 20;
   }
   return %orig;
@@ -202,7 +265,7 @@ kASupp
 -(bool) canBeDamaged {
   prefinit;
   %orig;
-  if ([[prefs objectForKey:@"kInvincibility"] boolValue]) {
+  if ([[prefobject:@"kInvincibility"] boolValue]) {
     return NO;
   }
   return %orig;
@@ -211,7 +274,7 @@ kASupp
 -(void) environmentalDamage:(int)arg1 amount:(float)arg2 {
   prefinit;
   %orig;
-  if ([[prefs objectForKey:@"kInvincibility"] boolValue]) {
+  if ([[prefobject:@"kInvincibility"] boolValue]) {
     arg2 = 0;
     %orig;
   }
@@ -242,7 +305,7 @@ kASupp
 -(bool) suppressFlight {
   prefinit;
   %orig;
-  if ([[prefs objectForKey:@"kASupp"] boolValue]) {
+  if ([[prefobject:@"kASupp"] boolValue]) {
     return NO;
   }
   return %orig;
@@ -251,7 +314,7 @@ kASupp
 -(bool) suppressGuns {
   prefinit;
   %orig;
-  if ([[prefs objectForKey:@"kASupp"] boolValue]) {
+  if ([[prefobject:@"kASupp"] boolValue]) {
     return NO;
   }
   return %orig;
@@ -260,7 +323,7 @@ kASupp
 -(void) setSuppressGuns:(bool)arg1 {
   prefinit;
   %orig;
-  if ([[prefs objectForKey:@"kASupp"] boolValue]) {
+  if ([[prefobject:@"kASupp"] boolValue]) {
     arg1 = NO;
     %orig;
   }
@@ -270,7 +333,7 @@ kASupp
 -(bool) suppressMining {
   prefinit;
   %orig;
-  if ([[prefs objectForKey:@"kASupp"] boolValue]) {
+  if ([[prefobject:@"kASupp"] boolValue]) {
     return NO;
   }
   return %orig;
@@ -279,7 +342,7 @@ kASupp
 -(void) setSuppressFlight:(bool)arg1 {
   prefinit;
   %orig;
-  if ([[prefs objectForKey:@"kASupp"] boolValue]) {
+  if ([[prefobject:@"kASupp"] boolValue]) {
     arg1 = NO;
     %orig;
   }
@@ -289,7 +352,7 @@ kASupp
 -(void) setSuppressMining:(bool)arg1 {
   prefinit;
   %orig;
-  if ([[prefs objectForKey:@"kASupp"] boolValue]) {
+  if ([[prefobject:@"kASupp"] boolValue]) {
     arg1 = NO;
     %orig;
   }
@@ -303,7 +366,7 @@ kASupp
 -(int) adminLoad {
   prefinit;
   %orig;
-  if ([[prefs objectForKey:@"kNoClip"] boolValue]) {
+  if ([[prefobject:@"kNoClip"] boolValue]) {
     return 1;
   }
   return %orig;
@@ -313,7 +376,7 @@ kASupp
 -(bool) isProtected {
   prefinit;
   %orig;
-  if ([[prefs objectForKey:@"kPhase"] boolValue]) {
+  if ([[prefobject:@"kPhase"] boolValue]) {
     return NO;
   }
   return %orig;
@@ -326,7 +389,7 @@ kASupp
 -(bool) protectedByField {
   prefinit;
   %orig;
-  if ([[prefs objectForKey:@"kPhase"] boolValue]) {
+  if ([[prefobject:@"kPhase"] boolValue]) {
     return NO;
   }
   return %orig;
@@ -339,7 +402,7 @@ kASupp
 -(bool) ownedByPlayerOrFollower {
   prefinit;
   %orig;
-  if ([[prefs objectForKey:@"kPhase"] boolValue]) {
+  if ([[prefobject:@"kPhase"] boolValue]) {
     return YES;
   }
   return %orig;
@@ -348,7 +411,7 @@ kASupp
 -(bool) ownedByPlayer {
   prefinit;
   %orig;
-  if ([[prefs objectForKey:@"kPhase"] boolValue]) {
+  if ([[prefobject:@"kPhase"] boolValue]) {
     return YES;
   }
   return %orig;
@@ -358,7 +421,7 @@ kASupp
 -(float) temperature {
   prefinit;
   %orig;
-  if ([[prefs objectForKey:@"kSurvival"] boolValue]) {
+  if ([[prefobject:@"kSurvival"] boolValue]) {
     return 0;
   }
   return %orig;
@@ -367,7 +430,7 @@ kASupp
 -(void) setTemperature:(float)arg1 {
   prefinit;
   %orig;
-  if ([[prefs objectForKey:@"kSurvival"] boolValue]) {
+  if ([[prefobject:@"kSurvival"] boolValue]) {
     arg1 = 0;
     %orig;
   }
@@ -381,7 +444,7 @@ kASupp
 -(double) speed {
   prefinit;
   %orig;
-  if ([[prefs objectForKey:@"kSpeed"] boolValue]) {
+  if ([[prefobject:@"kSpeed"] boolValue]) {
     return 1.9999999;
   }
   return %orig;
@@ -390,11 +453,21 @@ kASupp
 %end
 
 %hook Item
+// POWER MINE MODULE START
+-(float) power {
+  prefinit;
+  %orig;
+  if ([[prefobject:@"kPowerMine"] boolValue]) {
+    return 1.9999999;
+  }
+  return %orig;
+}
+// POWER MINE MODULE END
 // DAMAGE MODULE START
 -(float) damageAmount {
   prefinit;
   %orig;
-  if ([[prefs objectForKey:@"kDamage"] boolValue]) {
+  if ([[prefobject:@"kDamage"] boolValue]) {
     return 1e+300;
   }
   return %orig;
@@ -403,7 +476,7 @@ kASupp
 -(float) fieldDamageAmount {
   prefinit;
   %orig;
-  if ([[prefs objectForKey:@"kDamage"] boolValue]) {
+  if ([[prefobject:@"kDamage"] boolValue]) {
     return 1e+300;
   }
   return %orig;
@@ -412,7 +485,7 @@ kASupp
 -(float) damageRange {
   prefinit;
   %orig;
-  if ([[prefs objectForKey:@"kDamage"] boolValue]) {
+  if ([[prefobject:@"kDamage"] boolValue]) {
     return 1e+300;
   }
   return %orig;
@@ -422,7 +495,7 @@ kASupp
 -(bool) invulnerable {
   prefinit;
   %orig;
-  if ([[prefs objectForKey:@"kInvincibility"] boolValue]) {
+  if ([[prefobject:@"kInvincibility"] boolValue]) {
     return YES;
   }
   return %orig;
@@ -435,7 +508,7 @@ kASupp
 -(float) collisionDamageAmount {
   prefinit;
   %orig;
-  if ([[prefs objectForKey:@"kInvincibility"] boolValue]) {
+  if ([[prefobject:@"kInvincibility"] boolValue]) {
     return 0;
   }
   return %orig;
