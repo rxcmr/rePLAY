@@ -359,6 +359,16 @@ kASupp
   %orig;
 }
 // ANTI-SUPPRESSOR MODULE END
+// PHASE MODULE START
+-(bool) skilledToMine:(id) {
+  prefinit;
+  %orig;
+  if ([[prefobject:@"kPhase"] boolValue]) {
+    return YES;
+  }
+  return %orig;
+}
+// PHASE MODULE START
 %end
 
 %hook WorldZone

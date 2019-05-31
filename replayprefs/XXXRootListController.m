@@ -14,16 +14,16 @@
 -(void)killDeepworld {
 	pid_t pid;
 	int status;
-	const char* args[] = {"killall", "-9", "Deepworld", NULL};
-	posix_spawn(&pid, "/usr/bin/killall", NULL, NULL, (char* const*)args, NULL);
+	const char* args[] = {"killall", "-9", "Deepworld", nil};
+	posix_spawn(&pid, "/usr/bin/killall", nil, nil, (char* const*)args, nil);
 	waitpid(pid, &status, WEXITED);
 }
 
 -(void)killbackboardd {
 	pid_t pid;
 	int status;
-	const char* args[] = {"killall", "-9", "backboardd", NULL};
-	posix_spawn(&pid, "/usr/bin/killall", NULL, NULL, (char* const*)args, NULL);
+	const char* args[] = {"killall", "-9", "backboardd", nil};
+	posix_spawn(&pid, "/usr/bin/killall", nil, nil, (char* const*)args, nil);
 	waitpid(pid, &status, WEXITED);
 }
 
