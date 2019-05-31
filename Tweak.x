@@ -360,7 +360,7 @@ kASupp
 }
 // ANTI-SUPPRESSOR MODULE END
 // PHASE MODULE START
--(bool) skilledToMine:(id) {
+-(bool) skilledToMine:(id)arg1 {
   prefinit;
   %orig;
   if ([[prefobject:@"kPhase"] boolValue]) {
