@@ -124,7 +124,7 @@ kASupp
   prefinit;
   %orig;
   if ([[prefobject:@"kZoom"] boolValue]) {
-    float zoomValue = [[prefobject:@"kZoomSlider"] intValue];
+    float zoomValue = [[prefobject:@"kZoomSlider"] floatValue];
     return zoomValue;
   }
   return %orig;
