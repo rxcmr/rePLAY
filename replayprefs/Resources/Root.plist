@@ -169,8 +169,6 @@
 		<dict>
 			<key>cell</key>
 			<string>PSSliderCell</string>
-			<key>default</key>
-			<real>0</real>
 			<key>defaults</key>
 			<string>the.overmind.replayprefs</string>
 			<key>key</key>
@@ -181,6 +179,10 @@
 			<real>0</real>
 			<key>showValue</key>
 			<true/>
+			<key>isSegmented</key>
+			<true/>
+			<key>segmentCount</key>
+			<integer>7</integer>
 		</dict>
 		<dict>
 			<key>cell</key>
