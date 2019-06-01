@@ -25,8 +25,7 @@ kASupp
   %orig;
   if ([[prefobject:@"kAdmin"] boolValue]) {
     return NO;
-  }
-  return %orig;
+  } else { return %orig; }
 }
 // ADMIN MODULE END
 %end
@@ -38,8 +37,7 @@ kASupp
   %orig;
   if ([[prefobject:@"kAdmin"] boolValue]) {
     return NO;
-  }
-  return %orig;
+  } else { return %orig; }
 }
 // ADMIN MODULE END
 %end
@@ -51,8 +49,7 @@ kASupp
   %orig;
   if ([[prefobject:@"kAdmin"] boolValue]) {
     return NO;
-  }
-  return %orig;
+  } else { return %orig; }
 }
 // ADMIN MODULE END
 %end
@@ -64,8 +61,7 @@ kASupp
   %orig;
   if ([[prefobject:@"kAdmin"] boolValue]) {
     return NO;
-  }
-  return %orig;
+  } else { return %orig; }
 }
 // ADMIN MODULE END
 %end
@@ -77,8 +73,7 @@ kASupp
   %orig;
   if ([[prefobject:@"kAirWalk"] boolValue]) {
     return YES;
-  }
-  return %orig;
+  } else { return %orig; }
 }
 
 -(void)setGrounded:(BOOL)arg1 {
@@ -86,8 +81,7 @@ kASupp
   %orig;
   if ([[prefobject:@"kAirWalk"] boolValue]) {
     arg1 = YES;
-  }
-  %orig;
+  } else { %orig; };
 }
 // AIR WALK END
 %end
@@ -99,8 +93,7 @@ kASupp
   %orig;
   if ([[prefobject:@"kNoDetect"] boolValue]) {
     return NO;
-  }
-  return %orig;
+  } else { return %orig; }
 }
 // NO DETECT MODULE END
 %end
@@ -112,8 +105,7 @@ kASupp
   %orig;
   if ([[prefobject:@"kNoDetect"] boolValue]) {
     return NO;
-  }
-  return %orig;
+  } else { return %orig; }
 }
 // NO DETECT MODULE END
 %end
@@ -126,8 +118,7 @@ kASupp
   if ([[prefobject:@"kZoom"] boolValue]) {
     float zoomValue = [[prefobject:@"kZoomSlider"] floatValue];
     return zoomValue;
-  }
-  return %orig;
+  } else { return %orig; }
 }
 // ZOOM MODULE END
 // NO DETECT MODULE START
@@ -136,8 +127,7 @@ kASupp
   %orig;
   if ([[prefobject:@"kNoDetect"] boolValue]) {
     return NO;
-  }
-  return %orig;
+  } else { return %orig; }
 }
 
 -(id) karma {
@@ -145,8 +135,7 @@ kASupp
   %orig;
   if ([[prefobject:@"kNoDetect"] boolValue]) {
     return nil;
-  }
-  return %orig;
+  } else { return %orig; }
 }
 
 -(void) setKarma:(id)arg1 {
@@ -155,8 +144,7 @@ kASupp
   if ([[prefobject:@"kNoDetect"] boolValue]) {
     arg1 = nil;
     %orig;
-  }
-  %orig;
+ } else { %orig; }
 }
 // NO DETECT MODULE END
 // ADMIN MODULE START
@@ -166,8 +154,7 @@ kASupp
   if ([[prefobject:@"kAdmin"] boolValue]) {
     arg1 = YES;
     %orig;
-  }
-  %orig;
+  } else { %orig; }
 }
 
 -(bool) admin {
@@ -175,8 +162,7 @@ kASupp
   %orig;
   if ([[prefobject:@"kAdmin"] boolValue]) {
     return YES;
-  }
-  return %orig;
+  } else { return %orig; }
 }
 // ADMIN MODULE END
 // STEAM MODULE START
@@ -185,8 +171,7 @@ kASupp
   %orig;
   if ([[prefobject:@"kSteam"] boolValue]) {
     return YES;
-  }
-  return %orig;
+  } else { return %orig; }
 }
 
 -(double) steamCooldownDuration {
@@ -194,8 +179,7 @@ kASupp
   %orig;
   if ([[prefobject:@"kSteam"] boolValue]) {
     return 0;
-  }
-  return %orig;
+  } else { return %orig; }
 }
 // STEAM MODULE END
 // SPEED MODULE START
@@ -204,8 +188,7 @@ kASupp
   %orig;
   if ([[prefobject:@"kSpeed"] boolValue]) {
     return 1.9999999;
-  }
-  return %orig;
+  } else { return %orig; }
 }
 
 -(float) swimmingSpeed {
@@ -213,8 +196,7 @@ kASupp
   %orig;
   if ([[prefobject:@"kSpeed"] boolValue]) {
     return 1.9999999;
-  }
-  return %orig;
+  } else { return %orig; }
 }
 
 -(float) climbingSpeed {
@@ -222,8 +204,7 @@ kASupp
   %orig;
   if ([[prefobject:@"kSpeed"] boolValue]) {
     return 1.9999999;
-  }
-  return %orig;
+  } else { return %orig; };
 }
 
 -(float) runningSpeed {
@@ -231,8 +212,7 @@ kASupp
   %orig;
   if ([[prefobject:@"kSpeed"] boolValue]) {
     return 1.9999999;
-  }
-  return %orig;
+  } else { return %orig; }
 }
 
 -(float) flyingSpeed {
@@ -240,8 +220,7 @@ kASupp
   %orig;
   if ([[prefobject:@"kSpeed"] boolValue]) {
     return 1.9999999;
-  }
-  return %orig;
+  } else { return %orig; };
 }
 // SPEED MODULE END
 // DAMAGE MODULE START
@@ -250,8 +229,7 @@ kASupp
   %orig;
   if ([[prefobject:@"kDamage"] boolValue]) {
     return 1e+300;
-  }
-  return %orig;
+  } else { return %orig; };
 }
 
 -(bool) damage:(int)arg1 amount:(float)arg2 attacker:(id)arg3 {
@@ -260,8 +238,7 @@ kASupp
   if ([[prefobject:@"kDamage"] boolValue]) {
     arg2 = 99;
     return %orig;
-  }
-  return %orig;
+  } else { return %orig; }
 }
 
 -(float) gunEfficiency {
@@ -269,8 +246,7 @@ kASupp
   %orig;
   if ([[prefobject:@"kDamage"] boolValue]) {
     return 20;
-  }
-  return %orig;
+  } else { return %orig; }
 }
 // DAMAGE MODULE END
 // INVINCIBILITY MODULE START
@@ -279,8 +255,7 @@ kASupp
   %orig;
   if ([[prefobject:@"kInvincibility"] boolValue]) {
     return NO;
-  }
-  return %orig;
+  } else { return %orig; }
 }
 
 -(void) environmentalDamage:(int)arg1 amount:(float)arg2 {
@@ -289,8 +264,7 @@ kASupp
   if ([[prefobject:@"kInvincibility"] boolValue]) {
     arg2 = 0;
     %orig;
-  }
-  %orig;
+  } else { %orig; }
 }
 // INVINCIBILITY MODULE END
 // COLLISION MODULE START
@@ -319,8 +293,7 @@ kASupp
   %orig;
   if ([[prefobject:@"kASupp"] boolValue]) {
     return NO;
-  }
-  return %orig;
+  } else { return %orig; }
 }
 
 -(bool) suppressGuns {
@@ -328,8 +301,7 @@ kASupp
   %orig;
   if ([[prefobject:@"kASupp"] boolValue]) {
     return NO;
-  }
-  return %orig;
+ } else { return %orig; }
 }
 
 -(void) setSuppressGuns:(bool)arg1 {
@@ -338,8 +310,7 @@ kASupp
   if ([[prefobject:@"kASupp"] boolValue]) {
     arg1 = NO;
     %orig;
-  }
-  %orig;
+ } else { %orig; }
 }
 
 -(bool) suppressMining {
@@ -347,8 +318,7 @@ kASupp
   %orig;
   if ([[prefobject:@"kASupp"] boolValue]) {
     return NO;
-  }
-  return %orig;
+  } else { return %orig; }
 }
 
 -(void) setSuppressFlight:(bool)arg1 {
@@ -357,8 +327,7 @@ kASupp
   if ([[prefobject:@"kASupp"] boolValue]) {
     arg1 = NO;
     %orig;
-  }
-  %orig;
+  } else { %orig; }
 }
 
 -(void) setSuppressMining:(bool)arg1 {
@@ -367,8 +336,7 @@ kASupp
   if ([[prefobject:@"kASupp"] boolValue]) {
     arg1 = NO;
     %orig;
-  }
-  %orig;
+  } else { %orig; }
 }
 // ANTI-SUPPRESSOR MODULE END
 // PHASE MODULE START
@@ -377,8 +345,7 @@ kASupp
   %orig;
   if ([[prefobject:@"kPhase"] boolValue]) {
     return YES;
-  }
-  return %orig;
+  } else { return %orig; }
 }
 // PHASE MODULE START
 %end
@@ -390,8 +357,7 @@ kASupp
   %orig;
   if ([[prefobject:@"kNoClip"] boolValue]) {
     return 1;
-  }
-  return %orig;
+  } else { return %orig; }
 }
 // NOCLIP MODULE END
 // PHASE MODULE START
@@ -400,8 +366,7 @@ kASupp
   %orig;
   if ([[prefobject:@"kPhase"] boolValue]) {
     return NO;
-  }
-  return %orig;
+  } else { return %orig; }
 }
 // PHASE MODULE END
 %end
@@ -413,8 +378,7 @@ kASupp
   %orig;
   if ([[prefobject:@"kPhase"] boolValue]) {
     return NO;
-  }
-  return %orig;
+  } else { return %orig; }
 }
 // PHASE MODULE END
 %end
@@ -426,8 +390,7 @@ kASupp
   %orig;
   if ([[prefobject:@"kPhase"] boolValue]) {
     return YES;
-  }
-  return %orig;
+  } else { return %orig; }
 }
 
 -(bool) ownedByPlayer {
@@ -435,8 +398,7 @@ kASupp
   %orig;
   if ([[prefobject:@"kPhase"] boolValue]) {
     return YES;
-  }
-  return %orig;
+  } else { return %orig; }
 }
 // PHASE MODULE END
 // SURVIVAL MODULE START
@@ -445,8 +407,7 @@ kASupp
   %orig;
   if ([[prefobject:@"kSurvival"] boolValue]) {
     return 0;
-  }
-  return %orig;
+  } else { return %orig; }
 }
 
 -(void) setTemperature:(float)arg1 {
@@ -455,8 +416,7 @@ kASupp
   if ([[prefobject:@"kSurvival"] boolValue]) {
     arg1 = 0;
     %orig;
-  }
-  %orig;
+  } else { %orig; }
 }
 // SURVIVAL MODULE END
 %end
@@ -468,8 +428,7 @@ kASupp
   %orig;
   if ([[prefobject:@"kSpeed"] boolValue]) {
     return 1.9999999;
-  }
-  return %orig;
+  } else { return %orig; }
 }
 // SPEED MODULE END
 %end
@@ -481,8 +440,7 @@ kASupp
   %orig;
   if ([[prefobject:@"kPowerMine"] boolValue]) {
     return 4.9999999;
-  }
-  return %orig;
+  } else { return %orig; }
 }
 // POWER MINE MODULE END
 // DAMAGE MODULE START
@@ -491,8 +449,7 @@ kASupp
   %orig;
   if ([[prefobject:@"kDamage"] boolValue]) {
     return 1e+300;
-  }
-  return %orig;
+  } else { return %orig; }
 }
 
 -(float) fieldDamageAmount {
@@ -500,8 +457,7 @@ kASupp
   %orig;
   if ([[prefobject:@"kDamage"] boolValue]) {
     return 1e+300;
-  }
-  return %orig;
+  } else { return %orig; }
 }
 
 -(float) damageRange {
@@ -509,8 +465,7 @@ kASupp
   %orig;
   if ([[prefobject:@"kDamage"] boolValue]) {
     return 1e+300;
-  }
-  return %orig;
+  } else { return %orig; }
 }
 // DAMAGE MODULE END
 // INVINCIBILITY MODULE START
@@ -519,8 +474,7 @@ kASupp
   %orig;
   if ([[prefobject:@"kInvincibility"] boolValue]) {
     return YES;
-  }
-  return %orig;
+  } else { return %orig; }
 }
 // INVINCIBILITY MODULE END
 %end
@@ -532,8 +486,7 @@ kASupp
   %orig;
   if ([[prefobject:@"kInvincibility"] boolValue]) {
     return 0;
-  }
-  return %orig;
+  } else { return %orig; }
 }
 // INVINCIBILITY MODULE END
 %end
