@@ -4,6 +4,7 @@
 #define prefobject prefs objectForKey
 /*
 List of prefobjects
+kZoom
 kPowerMine
 kAirWalk
 kNoClip
@@ -118,6 +119,17 @@ kASupp
 %end
 
 %hook Player
+// ZOOM MODULE START
+-(float) zoomModifier {
+  prefinit;
+  %orig;
+  if ([[prefobject:@"kZoom"] boolValue]) {
+    float zoomValue = [[prefobject:@"kZoomSlider"] intValue];
+    return zoomValue;
+  }
+  return %orig;
+}
+// ZOOM MODULE END
 // NO DETECT MODULE START
 -(bool) karmaIsPoor {
   prefinit;
