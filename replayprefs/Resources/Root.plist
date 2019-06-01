@@ -173,10 +173,16 @@
 			<string>the.overmind.replayprefs</string>
 			<key>key</key>
 			<string>kZoomSlider</string>
-			<key>max</key>
-			<real>0</real>
+			<key>default</key>
+			<integer>0</integer>
 			<key>min</key>
+			<real>0</real>
+			<key>max</key>
 			<real>-0.7</real>
+			<key>isSegmented</key>
+			<true/>
+			<key>segmentCount</key>
+			<integer>7</integer>
 			<key>showValue</key>
 			<true/>
 		</dict>
