@@ -179,10 +179,6 @@
 			<real>0</real>
 			<key>max</key>
 			<real>-0.7</real>
-			<key>isSegmented</key>
-			<true/>
-			<key>segmentCount</key>
-			<integer>7</integer>
 			<key>showValue</key>
 			<true/>
 		</dict>
