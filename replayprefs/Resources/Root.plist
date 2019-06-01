@@ -181,12 +181,21 @@
 			<real>-0.7</real>
 			<key>showValue</key>
 			<true/>
+			<key>isSegmented</key>
+			<true/>
+			<key>segmentCount</key>
+			<integer>7</integer>
 		</dict>
 		<dict>
 			<key>cell</key>
 			<string>PSGroupCell</string>
 			<key>label</key>
 			<string>The lower the value, the farther away the zoom is.</string>
+		</dict>
+		<dict>
+			<key>cell</key>
+			<string>PSGroupCell</string>
+			<key>label</key>
 			<string>Only tap the zoom button once.</string>
 		</dict>
 		<dict>
