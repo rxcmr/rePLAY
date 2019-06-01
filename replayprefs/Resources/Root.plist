@@ -174,9 +174,9 @@
 			<key>key</key>
 			<string>kZoomSlider</string>
 			<key>max</key>
-			<real>-0.7</real>
-			<key>min</key>
 			<real>0</real>
+			<key>min</key>
+			<real>-0.7</real>
 			<key>showValue</key>
 			<true/>
 			<key>isSegmented</key>
