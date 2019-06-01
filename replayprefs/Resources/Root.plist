@@ -179,10 +179,6 @@
 			<real>-0.7</real>
 			<key>showValue</key>
 			<true/>
-			<key>isSegmented</key>
-			<true/>
-			<key>segmentCount</key>
-			<integer>7</integer>
 		</dict>
 		<dict>
 			<key>cell</key>
