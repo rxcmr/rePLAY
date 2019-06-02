@@ -228,7 +228,7 @@ kASupp
     prefinit;
     %orig;
     if ([[prefkey:@"kDamage"] boolValue]) {
-      return 1e+9999999;
+      return 1.7976931348623157E+308;
     } else { return %orig; };
 }
 
@@ -456,7 +456,7 @@ kASupp
     prefinit;
     %orig;
     if ([[prefkey:@"kDamage"] boolValue]) {
-      return 1e+9999999;
+      return 1.7976931348623157E+308;
     } else { return %orig; }
 }
 
@@ -464,7 +464,7 @@ kASupp
     prefinit;
     %orig;
     if ([[prefkey:@"kDamage"] boolValue]) {
-      return 1e+9999999;
+      return 1.7976931348623157E+308;
     } else { return %orig; }
 }
 
@@ -472,7 +472,7 @@ kASupp
     prefinit;
     %orig;
     if ([[prefkey:@"kDamage"] boolValue]) {
-      return 1e+9999999;
+      return 1.7976931348623157E+308;
     } else { return %orig; }
 }
 // DAMAGE END
