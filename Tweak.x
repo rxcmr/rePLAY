@@ -19,7 +19,7 @@ kSurvival
 kASupp
 */
 %hook GameCommand
-// ADMIN MODULE START
+// ADMIN START
 +(bool) consoleRequiresAdmin {
   prefinit;
   %orig;
@@ -27,11 +27,11 @@ kASupp
     return NO;
   } else { return %orig; }
 }
-// ADMIN MODULE END
+// ADMIN END
 %end
 
 %hook GameCommandSay
-// ADMIN MODULE START
+// ADMIN START
 +(bool) consoleRequiresAdmin {
   prefinit;
   %orig;
@@ -39,11 +39,11 @@ kASupp
     return NO;
   } else { return %orig; }
 }
-// ADMIN MODULE END
+// ADMIN END
 %end
 
 %hook GameCommandPlayerDie
-// ADMIN MODULE START
+// ADMIN START
 +(bool) consoleRequiresAdmin {
   prefinit;
   %orig;
@@ -51,11 +51,11 @@ kASupp
     return NO;
   } else { return %orig; }
 }
-// ADMIN MODULE END
+// ADMIN END
 %end
 
 %hook GameCommandDebug
-// ADMIN MODULE START
+// ADMIN START
 +(bool) consoleRequiresAdmin {
   prefinit;
   %orig;
@@ -63,11 +63,11 @@ kASupp
     return NO;
   } else { return %orig; }
 }
-// ADMIN MODULE END
+// ADMIN END
 %end
 
 %hook Entity
-// AIR WALK MODULE START
+// AIR WALK START
 -(BOOL) grounded {
   prefinit;
   %orig;
@@ -87,7 +87,7 @@ kASupp
 %end
 
 %hook FlurryUtil
-// NO DETECT MODULE START
+// NO DETECT START
 +(BOOL) deviceIsJailbroken {
   prefinit;
   %orig;
@@ -95,11 +95,11 @@ kASupp
     return NO;
   } else { return %orig; }
 }
-// NO DETECT MODULE END
+// NO DETECT END
 %end
 
 %hook PFDevice
-// NO DETECT MODULE START
+// NO DETECT START
 -(bool) isJailbroken {
   prefinit;
   %orig;
@@ -107,11 +107,11 @@ kASupp
     return NO;
   } else { return %orig; }
 }
-// NO DETECT MODULE END
+// NO DETECT END
 %end
 
 %hook Player
-// ZOOM MODULE START
+// ZOOM START
 -(float) zoomModifier {
   prefinit;
   %orig;
@@ -120,8 +120,8 @@ kASupp
     return zoomValue;
   } else { return %orig; }
 }
-// ZOOM MODULE END
-// NO DETECT MODULE START
+// ZOOM END
+// NO DETECT START
 -(bool) karmaIsPoor {
   prefinit;
   %orig;
@@ -146,8 +146,8 @@ kASupp
     %orig;
  } else { %orig; }
 }
-// NO DETECT MODULE END
-// ADMIN MODULE START
+// NO DETECT END
+// ADMIN START
 -(void) setAwesomeMode:(bool)arg1 {
   prefinit;
   %orig;
@@ -164,8 +164,8 @@ kASupp
     return YES;
   } else { return %orig; }
 }
-// ADMIN MODULE END
-// STEAM MODULE START
+// ADMIN END
+// STEAM START
 -(bool) hasSteam {
   prefinit;
   %orig;
@@ -181,8 +181,8 @@ kASupp
     return 0;
   } else { return %orig; }
 }
-// STEAM MODULE END
-// SPEED MODULE START
+// STEAM END
+// SPEED START
 -(float) miningSpeed {
   prefinit;
   %orig;
@@ -222,8 +222,8 @@ kASupp
     return 1.9999999;
   } else { return %orig; };
 }
-// SPEED MODULE END
-// DAMAGE MODULE START
+// SPEED END
+// DAMAGE START
 -(float) aimSteadiness {
   prefinit;
   %orig;
@@ -248,8 +248,16 @@ kASupp
     return 20;
   } else { return %orig; }
 }
-// DAMAGE MODULE END
-// INVINCIBILITY MODULE START
+// DAMAGE END
+// INVINCIBILITY START
+-(BOOL) canEvadePrecipitationDamage:(int)arg1 {
+  prefinit;
+  %orig;
+  if ([[prefobject:@"kInvincibility"] boolValue]) {
+    return YES;
+  } else { return %orig; }
+}
+
 -(bool) canBeDamaged {
   prefinit;
   %orig;
@@ -266,8 +274,8 @@ kASupp
     %orig;
   } else { %orig; }
 }
-// INVINCIBILITY MODULE END
-// COLLISION MODULE START
+// INVINCIBILITY END
+// COLLISION START
 -(void) didCollideWithEntity:(id)arg1 {
   arg1 = nil;
   %orig;
@@ -286,8 +294,8 @@ kASupp
 -(bool) colliding {
   return NO;
 }
-// COLLISION MODULE END
-// ANTI-SUPPRESSOR MODULE START
+// COLLISION END
+// ANTI-SUPPRESSOR START
 -(bool) suppressFlight {
   prefinit;
   %orig;
@@ -338,8 +346,8 @@ kASupp
     %orig;
   } else { %orig; }
 }
-// ANTI-SUPPRESSOR MODULE END
-// PHASE MODULE START
+// ANTI-SUPPRESSOR END
+// PHASE START
 -(bool) skilledToMine:(id)arg1 {
   prefinit;
   %orig;
@@ -347,11 +355,11 @@ kASupp
     return YES;
   } else { return %orig; }
 }
-// PHASE MODULE START
+// PHASE START
 %end
 
 %hook WorldZone
-// NOCLIP MODULE START
+// NOCLIP START
 -(int) adminLoad {
   prefinit;
   %orig;
@@ -359,8 +367,8 @@ kASupp
     return 1;
   } else { return %orig; }
 }
-// NOCLIP MODULE END
-// PHASE MODULE START
+// NOCLIP END
+// PHASE START
 -(bool) isProtected {
   prefinit;
   %orig;
@@ -368,11 +376,11 @@ kASupp
     return NO;
   } else { return %orig; }
 }
-// PHASE MODULE END
+// PHASE END
 %end
 
 %hook BaseBlock
-// PHASE MODULE START
+// PHASE START
 -(bool) protectedByField {
   prefinit;
   %orig;
@@ -380,11 +388,11 @@ kASupp
     return NO;
   } else { return %orig; }
 }
-// PHASE MODULE END
+// PHASE END
 %end
 
 %hook MetaBlock
-// PHASE MODULE START
+// PHASE START
 -(bool) ownedByPlayerOrFollower {
   prefinit;
   %orig;
@@ -400,8 +408,8 @@ kASupp
     return YES;
   } else { return %orig; }
 }
-// PHASE MODULE END
-// SURVIVAL MODULE START
+// PHASE END
+// SURVIVAL START
 -(float) temperature {
   prefinit;
   %orig;
@@ -418,11 +426,11 @@ kASupp
     %orig;
   } else { %orig; }
 }
-// SURVIVAL MODULE END
+// SURVIVAL END
 %end
 
 %hook CCSpeed
-// SPEED MODULE START
+// SPEED START
 -(double) speed {
   prefinit;
   %orig;
@@ -430,11 +438,11 @@ kASupp
     return 1.9999999;
   } else { return %orig; }
 }
-// SPEED MODULE END
+// SPEED END
 %end
 
 %hook Item
-// POWER MINE MODULE START
+// POWER MINE START
 -(float) power {
   prefinit;
   %orig;
@@ -442,8 +450,8 @@ kASupp
     return 4.9999999;
   } else { return %orig; }
 }
-// POWER MINE MODULE END
-// DAMAGE MODULE START
+// POWER MINE END
+// DAMAGE START
 -(float) damageAmount {
   prefinit;
   %orig;
@@ -467,8 +475,8 @@ kASupp
     return 1e+300;
   } else { return %orig; }
 }
-// DAMAGE MODULE END
-// INVINCIBILITY MODULE START
+// DAMAGE END
+// INVINCIBILITY START
 -(bool) invulnerable {
   prefinit;
   %orig;
@@ -476,11 +484,11 @@ kASupp
     return YES;
   } else { return %orig; }
 }
-// INVINCIBILITY MODULE END
+// INVINCIBILITY END
 %end
 
 %hook EntityConfig
-// INVINCIBILITY MODULE START
+// INVINCIBILITY START
 -(float) collisionDamageAmount {
   prefinit;
   %orig;
@@ -488,5 +496,5 @@ kASupp
     return 0;
   } else { return %orig; }
 }
-// INVINCIBILITY MODULE END
+// INVINCIBILITY END
 %end

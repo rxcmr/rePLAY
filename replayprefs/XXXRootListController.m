@@ -19,12 +19,4 @@
 	waitpid(pid, &status, WEXITED);
 }
 
--(void)killbackboardd {
-	pid_t pid;
-	int status;
-	const char* args[] = {"killall", "-9", "backboardd", nil};
-	posix_spawn(&pid, "/usr/bin/killall", nil, nil, (char* const*)args, nil);
-	waitpid(pid, &status, WEXITED);
-}
-
 @end
