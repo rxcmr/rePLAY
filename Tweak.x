@@ -1,9 +1,9 @@
 #import <Foundation/Foundation.h>
 #define kPath @"/var/mobile/Library/Preferences/the.overmind.replayprefs.plist"
 #define prefinit NSDictionary *prefs=[[NSDictionary alloc] initWithContentsOfFile:kPath]
-#define prefobject prefs objectForKey
+#define prefkey prefs objectForKey
 /*
-List of prefobjects
+List of prefkeys:
 kZoom
 kPowerMine
 kAirWalk
@@ -23,7 +23,7 @@ kASupp
 +(bool) consoleRequiresAdmin {
   prefinit;
   %orig;
-  if ([[prefobject:@"kAdmin"] boolValue]) {
+  if ([[prefkey:@"kAdmin"] boolValue]) {
     return NO;
   } else { return %orig; }
 }
@@ -35,7 +35,7 @@ kASupp
 +(bool) consoleRequiresAdmin {
   prefinit;
   %orig;
-  if ([[prefobject:@"kAdmin"] boolValue]) {
+  if ([[prefkey:@"kAdmin"] boolValue]) {
     return NO;
   } else { return %orig; }
 }
@@ -47,7 +47,7 @@ kASupp
 +(bool) consoleRequiresAdmin {
   prefinit;
   %orig;
-  if ([[prefobject:@"kAdmin"] boolValue]) {
+  if ([[prefkey:@"kAdmin"] boolValue]) {
     return NO;
   } else { return %orig; }
 }
@@ -59,7 +59,7 @@ kASupp
 +(bool) consoleRequiresAdmin {
   prefinit;
   %orig;
-  if ([[prefobject:@"kAdmin"] boolValue]) {
+  if ([[prefkey:@"kAdmin"] boolValue]) {
     return NO;
   } else { return %orig; }
 }
@@ -71,7 +71,7 @@ kASupp
 -(BOOL) grounded {
   prefinit;
   %orig;
-  if ([[prefobject:@"kAirWalk"] boolValue]) {
+  if ([[prefkey:@"kAirWalk"] boolValue]) {
     return YES;
   } else { return %orig; }
 }
@@ -79,7 +79,7 @@ kASupp
 -(void)setGrounded:(BOOL)arg1 {
   prefinit;
   %orig;
-  if ([[prefobject:@"kAirWalk"] boolValue]) {
+  if ([[prefkey:@"kAirWalk"] boolValue]) {
     arg1 = YES;
   } else { %orig; };
 }
@@ -91,7 +91,7 @@ kASupp
 +(BOOL) deviceIsJailbroken {
   prefinit;
   %orig;
-  if ([[prefobject:@"kNoDetect"] boolValue]) {
+  if ([[prefkey:@"kNoDetect"] boolValue]) {
     return NO;
   } else { return %orig; }
 }
@@ -103,7 +103,7 @@ kASupp
 -(bool) isJailbroken {
   prefinit;
   %orig;
-  if ([[prefobject:@"kNoDetect"] boolValue]) {
+  if ([[prefkey:@"kNoDetect"] boolValue]) {
     return NO;
   } else { return %orig; }
 }
@@ -115,8 +115,8 @@ kASupp
 -(float) zoomModifier {
   prefinit;
   %orig;
-  if ([[prefobject:@"kZoom"] boolValue]) {
-    float zoomValue = [[prefobject:@"kZoomSlider"] floatValue];
+  if ([[prefkey:@"kZoom"] boolValue]) {
+    float zoomValue = [[prefkey:@"kZoomSlider"] floatValue];
     return zoomValue;
   } else { return %orig; }
 }
@@ -125,7 +125,7 @@ kASupp
 -(bool) karmaIsPoor {
   prefinit;
   %orig;
-  if ([[prefobject:@"kNoDetect"] boolValue]) {
+  if ([[prefkey:@"kNoDetect"] boolValue]) {
     return NO;
   } else { return %orig; }
 }
@@ -133,7 +133,7 @@ kASupp
 -(id) karma {
   prefinit;
   %orig;
-  if ([[prefobject:@"kNoDetect"] boolValue]) {
+  if ([[prefkey:@"kNoDetect"] boolValue]) {
     return nil;
   } else { return %orig; }
 }
@@ -141,7 +141,7 @@ kASupp
 -(void) setKarma:(id)arg1 {
   prefinit;
   %orig;
-  if ([[prefobject:@"kNoDetect"] boolValue]) {
+  if ([[prefkey:@"kNoDetect"] boolValue]) {
     arg1 = nil;
     %orig;
  } else { %orig; }
@@ -151,7 +151,7 @@ kASupp
 -(void) setAwesomeMode:(bool)arg1 {
   prefinit;
   %orig;
-  if ([[prefobject:@"kAdmin"] boolValue]) {
+  if ([[prefkey:@"kAdmin"] boolValue]) {
     arg1 = YES;
     %orig;
   } else { %orig; }
@@ -160,7 +160,7 @@ kASupp
 -(bool) admin {
   prefinit;
   %orig;
-  if ([[prefobject:@"kAdmin"] boolValue]) {
+  if ([[prefkey:@"kAdmin"] boolValue]) {
     return YES;
   } else { return %orig; }
 }
@@ -169,7 +169,7 @@ kASupp
 -(bool) hasSteam {
   prefinit;
   %orig;
-  if ([[prefobject:@"kSteam"] boolValue]) {
+  if ([[prefkey:@"kSteam"] boolValue]) {
     return YES;
   } else { return %orig; }
 }
@@ -177,7 +177,7 @@ kASupp
 -(double) steamCooldownDuration {
   prefinit;
   %orig;
-  if ([[prefobject:@"kSteam"] boolValue]) {
+  if ([[prefkey:@"kSteam"] boolValue]) {
     return 0;
   } else { return %orig; }
 }
@@ -186,7 +186,7 @@ kASupp
 -(float) miningSpeed {
   prefinit;
   %orig;
-  if ([[prefobject:@"kSpeed"] boolValue]) {
+  if ([[prefkey:@"kSpeed"] boolValue]) {
     return 1.9999999;
   } else { return %orig; }
 }
@@ -194,7 +194,7 @@ kASupp
 -(float) swimmingSpeed {
   prefinit;
   %orig;
-  if ([[prefobject:@"kSpeed"] boolValue]) {
+  if ([[prefkey:@"kSpeed"] boolValue]) {
     return 1.9999999;
   } else { return %orig; }
 }
@@ -202,7 +202,7 @@ kASupp
 -(float) climbingSpeed {
   prefinit;
   %orig;
-  if ([[prefobject:@"kSpeed"] boolValue]) {
+  if ([[prefkey:@"kSpeed"] boolValue]) {
     return 1.9999999;
   } else { return %orig; };
 }
@@ -210,7 +210,7 @@ kASupp
 -(float) runningSpeed {
   prefinit;
   %orig;
-  if ([[prefobject:@"kSpeed"] boolValue]) {
+  if ([[prefkey:@"kSpeed"] boolValue]) {
     return 1.9999999;
   } else { return %orig; }
 }
@@ -218,7 +218,7 @@ kASupp
 -(float) flyingSpeed {
   prefinit;
   %orig;
-  if ([[prefobject:@"kSpeed"] boolValue]) {
+  if ([[prefkey:@"kSpeed"] boolValue]) {
     return 1.9999999;
   } else { return %orig; };
 }
@@ -227,7 +227,7 @@ kASupp
 -(float) aimSteadiness {
   prefinit;
   %orig;
-  if ([[prefobject:@"kDamage"] boolValue]) {
+  if ([[prefkey:@"kDamage"] boolValue]) {
     return 1e+300;
   } else { return %orig; };
 }
@@ -235,7 +235,7 @@ kASupp
 -(bool) damage:(int)arg1 amount:(float)arg2 attacker:(id)arg3 {
   prefinit;
   %orig;
-  if ([[prefobject:@"kDamage"] boolValue]) {
+  if ([[prefkey:@"kDamage"] boolValue]) {
     arg2 = 99;
     return %orig;
   } else { return %orig; }
@@ -244,7 +244,7 @@ kASupp
 -(float) gunEfficiency {
   prefinit;
   %orig;
-  if ([[prefobject:@"kDamage"] boolValue]) {
+  if ([[prefkey:@"kDamage"] boolValue]) {
     return 20;
   } else { return %orig; }
 }
@@ -253,7 +253,7 @@ kASupp
 -(BOOL) canEvadePrecipitationDamage:(int)arg1 {
   prefinit;
   %orig;
-  if ([[prefobject:@"kInvincibility"] boolValue]) {
+  if ([[prefkey:@"kInvincibility"] boolValue]) {
     return YES;
   } else { return %orig; }
 }
@@ -261,7 +261,7 @@ kASupp
 -(bool) canBeDamaged {
   prefinit;
   %orig;
-  if ([[prefobject:@"kInvincibility"] boolValue]) {
+  if ([[prefkey:@"kInvincibility"] boolValue]) {
     return NO;
   } else { return %orig; }
 }
@@ -269,7 +269,7 @@ kASupp
 -(void) environmentalDamage:(int)arg1 amount:(float)arg2 {
   prefinit;
   %orig;
-  if ([[prefobject:@"kInvincibility"] boolValue]) {
+  if ([[prefkey:@"kInvincibility"] boolValue]) {
     arg2 = 0;
     %orig;
   } else { %orig; }
@@ -299,7 +299,7 @@ kASupp
 -(bool) suppressFlight {
   prefinit;
   %orig;
-  if ([[prefobject:@"kASupp"] boolValue]) {
+  if ([[prefkey:@"kASupp"] boolValue]) {
     return NO;
   } else { return %orig; }
 }
@@ -307,7 +307,7 @@ kASupp
 -(bool) suppressGuns {
   prefinit;
   %orig;
-  if ([[prefobject:@"kASupp"] boolValue]) {
+  if ([[prefkey:@"kASupp"] boolValue]) {
     return NO;
  } else { return %orig; }
 }
@@ -315,7 +315,7 @@ kASupp
 -(void) setSuppressGuns:(bool)arg1 {
   prefinit;
   %orig;
-  if ([[prefobject:@"kASupp"] boolValue]) {
+  if ([[prefkey:@"kASupp"] boolValue]) {
     arg1 = NO;
     %orig;
  } else { %orig; }
@@ -324,7 +324,7 @@ kASupp
 -(bool) suppressMining {
   prefinit;
   %orig;
-  if ([[prefobject:@"kASupp"] boolValue]) {
+  if ([[prefkey:@"kASupp"] boolValue]) {
     return NO;
   } else { return %orig; }
 }
@@ -332,7 +332,7 @@ kASupp
 -(void) setSuppressFlight:(bool)arg1 {
   prefinit;
   %orig;
-  if ([[prefobject:@"kASupp"] boolValue]) {
+  if ([[prefkey:@"kASupp"] boolValue]) {
     arg1 = NO;
     %orig;
   } else { %orig; }
@@ -341,7 +341,7 @@ kASupp
 -(void) setSuppressMining:(bool)arg1 {
   prefinit;
   %orig;
-  if ([[prefobject:@"kASupp"] boolValue]) {
+  if ([[prefkey:@"kASupp"] boolValue]) {
     arg1 = NO;
     %orig;
   } else { %orig; }
@@ -351,7 +351,7 @@ kASupp
 -(bool) skilledToMine:(id)arg1 {
   prefinit;
   %orig;
-  if ([[prefobject:@"kPhase"] boolValue]) {
+  if ([[prefkey:@"kPhase"] boolValue]) {
     return YES;
   } else { return %orig; }
 }
@@ -363,7 +363,7 @@ kASupp
 -(int) adminLoad {
   prefinit;
   %orig;
-  if ([[prefobject:@"kNoClip"] boolValue]) {
+  if ([[prefkey:@"kNoClip"] boolValue]) {
     return 1;
   } else { return %orig; }
 }
@@ -372,7 +372,7 @@ kASupp
 -(bool) isProtected {
   prefinit;
   %orig;
-  if ([[prefobject:@"kPhase"] boolValue]) {
+  if ([[prefkey:@"kPhase"] boolValue]) {
     return NO;
   } else { return %orig; }
 }
@@ -384,7 +384,7 @@ kASupp
 -(bool) protectedByField {
   prefinit;
   %orig;
-  if ([[prefobject:@"kPhase"] boolValue]) {
+  if ([[prefkey:@"kPhase"] boolValue]) {
     return NO;
   } else { return %orig; }
 }
@@ -396,7 +396,7 @@ kASupp
 -(bool) ownedByPlayerOrFollower {
   prefinit;
   %orig;
-  if ([[prefobject:@"kPhase"] boolValue]) {
+  if ([[prefkey:@"kPhase"] boolValue]) {
     return YES;
   } else { return %orig; }
 }
@@ -404,7 +404,7 @@ kASupp
 -(bool) ownedByPlayer {
   prefinit;
   %orig;
-  if ([[prefobject:@"kPhase"] boolValue]) {
+  if ([[prefkey:@"kPhase"] boolValue]) {
     return YES;
   } else { return %orig; }
 }
@@ -413,7 +413,7 @@ kASupp
 -(float) temperature {
   prefinit;
   %orig;
-  if ([[prefobject:@"kSurvival"] boolValue]) {
+  if ([[prefkey:@"kSurvival"] boolValue]) {
     return 0;
   } else { return %orig; }
 }
@@ -421,7 +421,7 @@ kASupp
 -(void) setTemperature:(float)arg1 {
   prefinit;
   %orig;
-  if ([[prefobject:@"kSurvival"] boolValue]) {
+  if ([[prefkey:@"kSurvival"] boolValue]) {
     arg1 = 0;
     %orig;
   } else { %orig; }
@@ -434,7 +434,7 @@ kASupp
 -(double) speed {
   prefinit;
   %orig;
-  if ([[prefobject:@"kSpeed"] boolValue]) {
+  if ([[prefkey:@"kSpeed"] boolValue]) {
     return 1.9999999;
   } else { return %orig; }
 }
@@ -446,7 +446,7 @@ kASupp
 -(float) power {
   prefinit;
   %orig;
-  if ([[prefobject:@"kPowerMine"] boolValue]) {
+  if ([[prefkey:@"kPowerMine"] boolValue]) {
     return 4.9999999;
   } else { return %orig; }
 }
@@ -455,7 +455,7 @@ kASupp
 -(float) damageAmount {
   prefinit;
   %orig;
-  if ([[prefobject:@"kDamage"] boolValue]) {
+  if ([[prefkey:@"kDamage"] boolValue]) {
     return 1e+300;
   } else { return %orig; }
 }
@@ -463,7 +463,7 @@ kASupp
 -(float) fieldDamageAmount {
   prefinit;
   %orig;
-  if ([[prefobject:@"kDamage"] boolValue]) {
+  if ([[prefkey:@"kDamage"] boolValue]) {
     return 1e+300;
   } else { return %orig; }
 }
@@ -471,7 +471,7 @@ kASupp
 -(float) damageRange {
   prefinit;
   %orig;
-  if ([[prefobject:@"kDamage"] boolValue]) {
+  if ([[prefkey:@"kDamage"] boolValue]) {
     return 1e+300;
   } else { return %orig; }
 }
@@ -480,7 +480,7 @@ kASupp
 -(bool) invulnerable {
   prefinit;
   %orig;
-  if ([[prefobject:@"kInvincibility"] boolValue]) {
+  if ([[prefkey:@"kInvincibility"] boolValue]) {
     return YES;
   } else { return %orig; }
 }
@@ -492,7 +492,7 @@ kASupp
 -(float) collisionDamageAmount {
   prefinit;
   %orig;
-  if ([[prefobject:@"kInvincibility"] boolValue]) {
+  if ([[prefkey:@"kInvincibility"] boolValue]) {
     return 0;
   } else { return %orig; }
 }
