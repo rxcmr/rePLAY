@@ -162,18 +162,6 @@
 			<key>defaults</key>
 			<string>the.overmind.replayprefs</string>
 			<key>key</key>
-			<string>kCollision</string>
-			<key>label</key>
-			<string>No Entity Collisions</string>
-		</dict>
-		<dict>
-			<key>cell</key>
-			<string>PSSwitchCell</string>
-			<key>default</key>
-			<false/>
-			<key>defaults</key>
-			<string>the.overmind.replayprefs</string>
-			<key>key</key>
 			<string>kZoom</string>
 			<key>label</key>
 			<string>Far Sight (Zoom)</string>
