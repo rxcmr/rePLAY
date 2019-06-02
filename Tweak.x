@@ -277,22 +277,38 @@ kASupp
 // INVINCIBILITY END
 // COLLISION START
 - (void) didCollideWithEntity:(id)arg1 {
-    arg1 = nil;
+    prefinit;
     %orig;
+    if ([[prefkey:@"kCollision"] boolValue]) {
+      arg1 = nil;
+      %orig;
+    } else { %orig; }
 }
 
 - (void) didCollideFeetWithEntity:(id)arg1 {
-    arg1 = nil;
+    prefinit;
     %orig;
+    if ([[prefkey:@"kCollision"] boolValue]) {
+      arg1 = nil;
+      %orig;
+    } else { %orig; }
 }
 
 - (void) slowForEntity:(id)arg1 {
-    arg1 = nil;
+    prefinit;
     %orig;
+    if ([[prefkey:@"kCollision"] boolValue]) {
+      arg1 = nil;
+      %orig;
+    } else { %orig; }
 }
 
 - (bool) colliding {
-    return NO;
+    prefinit;
+    %orig;
+    if ([[prefkey:@"kCollision"] boolValue]) {
+      return NO;
+    } else { return %orig; }
 }
 // COLLISION END
 // ANTI- SUPPRESSOR START
