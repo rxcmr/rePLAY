@@ -20,7 +20,7 @@ kSurvival
 kASupp
 */
 %hook Lightmapper
-
+// LIGHT START
 - (bool) isHazy {
     prefinit;
     %orig;
@@ -46,6 +46,7 @@ kASupp
       %orig;
     } else { %orig; }
 }
+// LIGHT END
 %end
 
 %hook GameCommand
