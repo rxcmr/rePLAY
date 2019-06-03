@@ -4,6 +4,7 @@
 #define prefkey prefs objectForKey
 /*
 List of prefkeys:
+kLight
 kZoom
 kPowerMine
 kAirWalk
@@ -18,6 +19,35 @@ kPhase
 kSurvival
 kASupp
 */
+%hook Lightmapper
+
+- (bool) isHazy {
+    prefinit;
+    %orig;
+    if ([[prefkey:@"kLight"] boolValue]) {
+      return NO;
+    } else { return %orig; }
+}
+
+- (void) illuminateBlocks:(double)arg1 {
+    prefinit;
+    %orig;
+    if ([[prefkey:@"kLight"] boolValue]) {
+      arg1 = 1.7976931348623157E-308;
+      %orig;
+    } else { %orig; }
+}
+
+- (void) setDefaultBaseLight:(float)arg1 {
+    prefinit;
+    %orig;
+    if ([[prefkey:@"kLight"] boolValue]) {
+      arg1 = 1.7976931348623157E-308;
+      %orig;
+    } else { %orig; }
+}
+%end
+
 %hook GameCommand
 // ADMIN START
 + (bool) consoleRequiresAdmin {
@@ -236,7 +266,7 @@ kASupp
     prefinit;
     %orig;
     if ([[prefkey:@"kDamage"] boolValue]) {
-      arg2 = 99;
+      arg2 = 1.7976931348623157E+308;
       return %orig;
     } else { return %orig; }
 }
@@ -279,7 +309,7 @@ kASupp
 - (void) didCollideWithEntity:(id)arg1 {
     arg1 = nil;
     %orig;
-    
+
 }
 
 - (void) didCollideFeetWithEntity:(id)arg1 {
@@ -290,7 +320,7 @@ kASupp
 - (void) slowForEntity:(id)arg1 {
     arg1 = nil;
     %orig;
-    
+
 }
 
 - (bool) colliding {
