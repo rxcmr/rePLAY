@@ -176,7 +176,7 @@
 			<key>key</key>
 			<string>kMineLikeboonkgang</string>
 			<key>label</key>
-			<string>Mine using Swingables (ala boonkgang style)</string>
+			<string>Mine using Swingables</string>
 		</dict>
 		<dict>
 			<key>cell</key>
