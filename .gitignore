@@ -1,3 +1,6 @@
 packages
 .vscode
 .idea
+.theos
+.theos/obj
+.theos/_
