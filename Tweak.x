@@ -4,7 +4,7 @@
 #define prefkey prefs objectForKey
 /*
 List of prefkeys:
-kMineLikeboonkgang
+kSwing
 kLight
 kZoom
 kPowerMine
@@ -143,7 +143,7 @@ kASupp
 %end
 
 %hook Player
-// MINE LIKE BOONKGANG START
+// SWING START
 - (bool) activeItemIsTool {
   prefinit;
   %orig;
@@ -151,7 +151,7 @@ kASupp
     return YES;
   } else { return %orig; }
 }
-// MINE LIKE BOONKGANG END
+// SWING END
 // ZOOM START
 - (float) zoomModifier {
     prefinit;
@@ -485,7 +485,7 @@ kASupp
 %end
 
 %hook Item
-// MINE LIKE BOONKGANG START
+// SWING START
 - (bool) isMiningTool {
   prefinit;
   %orig;
@@ -493,7 +493,7 @@ kASupp
     return YES;
   } else { return %orig; }
 }
-// MINE LIKE BOONKGANG END
+// SWING END
 // POWER MINE START
 - (float) power {
     prefinit;
