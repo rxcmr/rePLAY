@@ -147,7 +147,7 @@ kASupp
 - (bool) activeItemIsTool {
   prefinit;
   %orig;
-  if ([[prefkey:@"kMineLikeboonkgang"] boolValue]) {
+  if ([[prefkey:@"kSwing"] boolValue]) {
     return YES;
   } else { return %orig; }
 }
@@ -489,7 +489,7 @@ kASupp
 - (bool) isMiningTool {
   prefinit;
   %orig;
-  if ([[prefkey:@"kMineLikeboonkgang"] boolValue]) {
+  if ([[prefkey:@"kSwing"] boolValue]) {
     return YES;
   } else { return %orig; }
 }
