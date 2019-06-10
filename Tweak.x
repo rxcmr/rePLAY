@@ -338,7 +338,7 @@ kASupp
     return NO;
 }
 // COLLISION END
-// ANTI- SUPPRESSOR START
+// ANTI-SUPPRESSOR START
 - (bool) suppressFlight {
     prefinit;
     %orig;
@@ -389,7 +389,7 @@ kASupp
       %orig;
     } else { %orig; }
 }
-// ANTI- SUPPRESSOR END
+// ANTI-SUPPRESSOR END
 // PHASE START
 - (bool) skilledToMine:(id)arg1 {
     prefinit;
