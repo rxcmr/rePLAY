@@ -19,4 +19,6 @@
 		waitpid(pid, &status, WEXITED);
 }
 
+- [HBRespringController respring]
+
 @end

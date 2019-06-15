@@ -8,6 +8,7 @@ TWEAK_NAME = rePLAY
 
 rePLAY_FILES = Tweak.x
 rePLAY_CFLAGS = -fobjc-arc
+rePLAY_EXTRA_FRAMEWORKS += Cephei CepheiPrefs
 
 include $(THEOS_MAKE_PATH)/tweak.mk
 SUBPROJECTS += replayprefs
