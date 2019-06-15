@@ -224,6 +224,18 @@
 			<key>action</key>
 			<string>killDeepworld</string>
 		</dict>
+		<dict>
+    <key>big</key>
+    <true/>
+    <key>cellClass</key>
+    <string>HBTwitterCell</string>
+    <key>height</key>
+    <integer>56</integer>
+    <key>label</key>
+    <string>fortuneteller2k</string>
+    <key>user</key>
+    <string>fortuneteller2k</string>
+</dict>
 	</array>
 	<key>title</key>
 	<string>rePLAY</string>
