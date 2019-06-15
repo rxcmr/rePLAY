@@ -5,20 +5,20 @@
 	<key>CFBundleDevelopmentRegion</key>
 	<string>English</string>
 	<key>CFBundleExecutable</key>
-	<string>replayprefs</string>
+	<string>rePLAY</string>
 	<key>CFBundleIdentifier</key>
-	<string>the.overmind.replayprefs</string>
+	<string>the.overmind.replay</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundlePackageType</key>
 	<string>BNDL</string>
 	<key>CFBundleShortVersionString</key>
-	<string>1.0.0</string>
+	<string>2.0.0</string>
 	<key>CFBundleSignature</key>
-	<string>????</string>
+	<string>????replay</string>
 	<key>CFBundleVersion</key>
 	<string>1.0</string>
 	<key>NSPrincipalClass</key>
-	<string>XXXRootListController</string>
+	<string>RPYRootListController</string>
 </dict>
 </plist>

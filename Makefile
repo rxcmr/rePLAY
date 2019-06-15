@@ -1,4 +1,4 @@
-ARCHS = armv7 armv7s arm64
+ARCHS = arm64
 
 INSTALL_TARGET_PROCESSES = Deepworld
 
@@ -6,10 +6,10 @@ include $(THEOS)/makefiles/common.mk
 
 TWEAK_NAME = rePLAY
 
-rePLAY_FILES = Tweak.x
-rePLAY_CFLAGS = -fobjc-arc
-rePLAY_EXTRA_FRAMEWORKS += Cephei CepheiPrefs
+$(TWEAK_NAME)_FILES = Tweak.x
+$(TWEAK_NAME)_CFLAGS = -fobjc-arc
+$(TWEAK_NAME)_EXTRA_FRAMEWORKS += Cephei CepheiPrefs
 
 include $(THEOS_MAKE_PATH)/tweak.mk
-SUBPROJECTS += replayprefs
+SUBPROJECTS += Preferences
 include $(THEOS_MAKE_PATH)/aggregate.mk

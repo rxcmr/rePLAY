@@ -1,7 +1,9 @@
 #import <Foundation/Foundation.h>
-#define kPath @"/var/mobile/Library/Preferences/the.overmind.replayprefs.plist"
-#define prefinit NSDictionary *prefs=[[NSDictionary alloc] initWithContentsOfFile:kPath]
-#define prefkey prefs objectForKey
+#import <Cephei/HBPreferences.h>
+#define kPath @"/var/mobile/Library/Preferences/the.overmind.replay.plist"
+// #define prefinit NSDictionary *preferences=[[NSDictionary alloc] initWithContentsOfFile:kPath]
+#define prefinit HBPreferences *preferences = [[HBPreferences alloc] initWithIdentifier:@"the.overmind.replay"];
+#define prefkey preferences objectForKey
 /*
 List of prefkeys:
 kSwing
