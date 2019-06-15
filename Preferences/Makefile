@@ -1,6 +1,6 @@
 include $(THEOS)/makefiles/common.mk
 
-BUNDLE_NAME = rePLAY
+BUNDLE_NAME = replayprefs
 $(BUNDLE_NAME)_FILES = RPYRootListController.m
 $(BUNDLE_NAME)_INSTALL_PATH = /Library/PreferenceBundles
 $(BUNDLE_NAME)_FRAMEWORKS = UIKit
