@@ -9,13 +9,13 @@
 		<key>cell</key>
 		<string>PSLinkCell</string>
 		<key>detail</key>
-		<string>XXXRootListController</string>
+		<string>RPYRootListController</string>
 		<key>icon</key>
 		<string>icon.png</string>
 		<key>isController</key>
 		<true/>
 		<key>label</key>
-		<string>replayprefs</string>
+		<string>rePLAY</string>
 	</dict>
 </dict>
 </plist>
