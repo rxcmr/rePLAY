@@ -1,6 +1,6 @@
 #import <Foundation/Foundation.h>
 #import <Cephei/HBPreferences.h>
-#define kPath @"/var/mobile/Library/Preferences/the.overmind.replay.plist"
+#define kPath @"/var/mobile/Library/Preferences/the.overmind.replayprefs.plist"
 #define prefinit HBPreferences *preferences = [[HBPreferences alloc] initWithIdentifier:@"the.overmind.replay"];
 #define prefkey preferences objectForKey
 /*
