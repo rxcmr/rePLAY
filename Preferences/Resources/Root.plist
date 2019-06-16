@@ -13,10 +13,6 @@
 		    <string>logo.png</string>
 		</dict>
 		<dict>
-				<key>cell</key>
-				<string>PSGroupCell</string>
-		</dict>
-		<dict>
 				<key>big</key>
 				<true/>
 				<key>cellClass</key>
@@ -27,6 +23,14 @@
 				<string>fortuneteller2k</string>
 				<key>user</key>
 				<string>fortuneteller2k</string>
+		</dict>
+		<dict>
+				<key>cell</key>
+				<string>PSGroupCell</string>
+		</dict>
+		<dict>
+				<key>cell</key>
+				<string>PSGroupCell</string>
 		</dict>
 		<dict>
 			<key>cell</key>
