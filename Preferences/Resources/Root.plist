@@ -12,7 +12,10 @@
 		    <key>icon</key>
 		    <string>logo.png</string>
 		</dict>
-
+		<dict>
+				<key>cell</key>
+				<string>PSGroupCell</string>
+		</dict>
 		<dict>
 				<key>big</key>
 				<true/>
