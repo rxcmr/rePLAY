@@ -5,10 +5,14 @@
 	<key>items</key>
 	<array>
 		<dict>
-			<key>cell</key>
-			<string>PSGroupCell</string>
-			<key>label</key>
-			<string>Restart Deepworld for changes to take effect.</string>
+    <key>cell</key>
+    <string>PSGroupCell</string>
+    <key>headerCellClass</key>
+    <string>HBImageTableCell</string>
+    <key>height</key>
+    <integer>800</integer>
+    <key>icon</key>
+    <string>logo.png</string>
 		</dict>
 		<dict>
 			<key>cell</key>
@@ -20,7 +24,7 @@
 			<key>key</key>
 			<string>kAdmin</string>
 			<key>label</key>
-			<string>Admin (Limited)</string>
+			<string>Admin (Limited Privileges)</string>
 		</dict>
 		<dict>
 			<key>cell</key>
