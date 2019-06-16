@@ -246,6 +246,14 @@
 			<key>action</key>
 			<string>killDeepworld</string>
 		</dict>
+		<dict>
+			<key>cell</key>
+			<string>PSButtonCell</string>
+			<key>label</key>
+			<string>Restart SpringBoard</string>
+			<key>action</key>
+			<string>respring</string>
+		</dict>
 	</array>
 	<key>title</key>
 	<string>rePLAY</string>
