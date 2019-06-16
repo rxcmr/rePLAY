@@ -21,4 +21,10 @@
 		waitpid(pid, &status, WEXITED);
 }
 
+- (void) respring {
+    pid_t pid;
+    const char* args[] = {"sbreload", nil, nil, nil};
+    posix_spawn(&pid, "/usr/bin/sbreload", nil, nil, (char* const*)args, nil);
+}
+
 @end
