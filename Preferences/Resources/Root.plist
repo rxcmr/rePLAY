@@ -5,14 +5,12 @@
 	<key>items</key>
 	<array>
 		<dict>
-    <key>cell</key>
-    <string>PSGroupCell</string>
-    <key>headerCellClass</key>
-    <string>HBImageTableCell</string>
-    <key>height</key>
-    <integer>0</integer>
-    <key>icon</key>
-    <string>logo.png</string>
+		    <key>cellClass</key>
+		    <string>HBImageTableCell</string>
+		    <key>height</key>
+		    <integer>100</integer>
+		    <key>icon</key>
+		    <string>logo.png</string>
 		</dict>
 		<dict>
 			<key>cell</key>
