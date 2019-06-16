@@ -12,6 +12,7 @@
 		    <key>icon</key>
 		    <string>logo.png</string>
 		</dict>
+
 		<dict>
 				<key>big</key>
 				<true/>
