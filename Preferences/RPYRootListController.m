@@ -21,10 +21,22 @@
 		waitpid(pid, &status, WEXITED);
 }
 
-- (void) respring {
-    pid_t pid;
-    const char* args[] = {"sbreload", nil, nil, nil};
-    posix_spawn(&pid, "/usr/bin/sbreload", nil, nil, (char* const*)args, nil);
+
+- (void) respring:(id)sender {
+	NSFileManager *fileManager = [NSFileManager defaultManager];
+	NSString *path = @"/usr/bin/sbreload";
+
+	if ([fileManager fileExistsAtPath:path]) {
+	        pid_t pid;
+	        const char* args[] = {"sbreload", nil, nil, nil};
+	        posix_spawn(&pid, "/usr/bin/sbreload", nil, nil, (char* const*)args, nil);
+		} else {
+	        pid_t pid;
+	        int status;
+	        const char* args[] = {"killall", "-9", "SpringBoard", nil};
+	        posix_spawn(&pid, "/usr/bin/killall", nil, nil, (char* const*)args, nil);
+	        waitpid(pid, &status, WEXITED);
+		}
 }
 
 @end
