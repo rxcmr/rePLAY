@@ -23,7 +23,7 @@
 
 
 - (void) respring:(id)sender {
-	NSFileManager *fileManager = [NSFileManager defaultManager];
+	NSFileManager *const fileManager = [NSFileManager defaultManager];
 	NSString *path = @"/usr/bin/sbreload";
 
 	if ([fileManager fileExistsAtPath:path]) {
