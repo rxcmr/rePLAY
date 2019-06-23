@@ -15,7 +15,7 @@
 - (void) killDeepworld {
     NSTask *task = [[[NSTask alloc] init] autorelease];
     [task setLaunchPath:@"/usr/bin/killall"];
-    [task setArguments:[NSArray arrayWithObjects:@"Deepworld", nil]];
+    [task setArguments:[NSArray arrayWithObjects:@"-9", @"Deepworld", nil]];
     [task launch];
 }
 
