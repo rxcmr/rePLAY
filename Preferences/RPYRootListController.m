@@ -28,8 +28,8 @@
       [task setArguments:[NSArray arrayWithObjects:@"", nil]];
       [task launch];
     } else {
-	    [task setLaunchPath:@"/usr/bin/killall"];
-    	[task setArguments:[NSArray arrayWithObjects:@"-9", @"backboardd", nil]];
+	  [task setLaunchPath:@"/usr/bin/killall"];
+      [task setArguments:[NSArray arrayWithObjects:@"backboardd", nil]];
       [task launch];
     }
 }
