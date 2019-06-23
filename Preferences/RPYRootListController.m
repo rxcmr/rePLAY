@@ -21,14 +21,13 @@
 
 
 - (void) respring {
-	NSFileManager *const fileManager = [NSFileManager defaultManager];
+    NSFileManager *const fileManager = [NSFileManager defaultManager];
+    NSTask *task = [[[NSTask alloc] init] autorelease];
     if ([fileManager fileExistsAtPath:@"/usr/bin/sbreload"]) {
-			NSTask *task = [[[NSTask alloc] init] autorelease];
       [task setLaunchPath:@"/usr/bin/sbreload"];
       [task launch];
     } else {
-			NSTask *task = [[[NSTask alloc] init] autorelease];
-	  	[task setLaunchPath:@"/usr/bin/killall"];
+      [task setLaunchPath:@"/usr/bin/killall"];
       [task setArguments:[NSArray arrayWithObjects:@"-9", @"backboardd", nil]];
       [task launch];
     }
