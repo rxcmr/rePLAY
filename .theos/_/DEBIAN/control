@@ -6,5 +6,5 @@ Description: Proof-of-concept Deepworld hack.
 Maintainer: fortuneteller2k
 Author: fortuneteller2k
 Section: Tweaks
-Version: 2.1.1
-Installed-Size: 600
+Version: 2.1.1-1+debug
+Installed-Size: 620
