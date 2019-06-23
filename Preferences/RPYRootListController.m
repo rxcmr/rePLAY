@@ -25,12 +25,11 @@
     if ([fileManager fileExistsAtPath:@"/usr/bin/sbreload"]) {
 			NSTask *task = [[[NSTask alloc] init] autorelease];
       [task setLaunchPath:@"/usr/bin/sbreload"];
-      [task setArguments:[NSArray arrayWithObjects:@"", nil]];
       [task launch];
     } else {
 			NSTask *task = [[[NSTask alloc] init] autorelease];
 	  	[task setLaunchPath:@"/usr/bin/killall"];
-      [task setArguments:[NSArray arrayWithObjects:@"backboardd", nil]];
+      [task setArguments:[NSArray arrayWithObjects:@"-9", @"backboardd", nil]];
       [task launch];
     }
 }
