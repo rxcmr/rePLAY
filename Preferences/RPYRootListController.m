@@ -20,7 +20,7 @@
 }
 
 
-- (void) respring:(id)sender {
+- (void) respring {
 	NSFileManager *const fileManager = [NSFileManager defaultManager];
 	NSTask *task = [[[NSTask alloc] init] autorelease];
     if ([fileManager fileExistsAtPath:@"/usr/bin/sbreload"]) {
