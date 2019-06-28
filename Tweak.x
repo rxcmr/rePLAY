@@ -28,7 +28,7 @@ kASupp
 */
 %hook Lightmapper
 // LIGHT START
-- (bool) isHazy {
+- (bool)isHazy {
     prefinit;
     %orig;
     if ([[prefkey:@"kLight"] boolValue]) {
@@ -36,7 +36,7 @@ kASupp
     } else { return %orig; }
 }
 
-- (void) illuminateBlocks:(double)arg1 {
+- (void)illuminateBlocks:(double)arg1 {
     prefinit;
     %orig;
     if ([[prefkey:@"kLight"] boolValue]) {
@@ -45,7 +45,7 @@ kASupp
     } else { %orig; }
 }
 
-- (void) setDefaultBaseLight:(float)arg1 {
+- (void)setDefaultBaseLight:(float)arg1 {
     prefinit;
     %orig;
     if ([[prefkey:@"kLight"] boolValue]) {
@@ -58,7 +58,7 @@ kASupp
 
 %hook GameCommand
 // ADMIN START
-+ (bool) consoleRequiresAdmin {
++ (bool)consoleRequiresAdmin {
     prefinit;
     %orig;
     if ([[prefkey:@"kAdmin"] boolValue]) {
@@ -70,7 +70,7 @@ kASupp
 
 %hook GameCommandSay
 // ADMIN START
-+ (bool) consoleRequiresAdmin {
++ (bool)consoleRequiresAdmin {
     prefinit;
     %orig;
     if ([[prefkey:@"kAdmin"] boolValue]) {
@@ -82,7 +82,7 @@ kASupp
 
 %hook GameCommandPlayerDie
 // ADMIN START
-+ (bool) consoleRequiresAdmin {
++ (bool)consoleRequiresAdmin {
     prefinit;
     %orig;
     if ([[prefkey:@"kAdmin"] boolValue]) {
@@ -94,7 +94,7 @@ kASupp
 
 %hook GameCommandDebug
 // ADMIN START
-+ (bool) consoleRequiresAdmin {
++ (bool)consoleRequiresAdmin {
     prefinit;
     %orig;
     if ([[prefkey:@"kAdmin"] boolValue]) {
@@ -106,7 +106,7 @@ kASupp
 
 %hook Entity
 // AIR WALK START
-- (BOOL) grounded {
+- (BOOL)grounded {
     prefinit;
     %orig;
     if ([[prefkey:@"kAirWalk"] boolValue]) {
@@ -126,7 +126,7 @@ kASupp
 
 %hook FlurryUtil
 // NO DETECT START
-+ (BOOL) deviceIsJailbroken {
++ (BOOL)deviceIsJailbroken {
     prefinit;
     %orig;
     if ([[prefkey:@"kNoDetect"] boolValue]) {
@@ -138,7 +138,7 @@ kASupp
 
 %hook PFDevice
 // NO DETECT START
-- (bool) isJailbroken {
+- (bool)isJailbroken {
     prefinit;
     %orig;
     if ([[prefkey:@"kNoDetect"] boolValue]) {
@@ -150,7 +150,7 @@ kASupp
 
 %hook Player
 // SWING START
-- (bool) activeItemIsTool {
+- (bool)activeItemIsTool {
   prefinit;
   %orig;
   if ([[prefkey:@"kSwing"] boolValue]) {
@@ -159,7 +159,7 @@ kASupp
 }
 // SWING END
 // ZOOM START
-- (float) zoomModifier {
+- (float)zoomModifier {
     prefinit;
     %orig;
     if ([[prefkey:@"kZoom"] boolValue]) {
@@ -169,7 +169,7 @@ kASupp
 }
 // ZOOM END
 // NO DETECT START
-- (bool) karmaIsPoor {
+- (bool)karmaIsPoor {
     prefinit;
     %orig;
     if ([[prefkey:@"kNoDetect"] boolValue]) {
@@ -177,7 +177,7 @@ kASupp
     } else { return %orig; }
 }
 
-- (id) karma {
+- (id)karma {
     prefinit;
     %orig;
     if ([[prefkey:@"kNoDetect"] boolValue]) {
@@ -185,7 +185,7 @@ kASupp
     } else { return %orig; }
 }
 
-- (void) setKarma:(id)arg1 {
+- (void)setKarma:(id)arg1 {
     prefinit;
     %orig;
     if ([[prefkey:@"kNoDetect"] boolValue]) {
@@ -195,7 +195,7 @@ kASupp
 }
 // NO DETECT END
 // ADMIN START
-- (void) setAwesomeMode:(bool)arg1 {
+- (void)setAwesomeMode:(bool)arg1 {
     prefinit;
     %orig;
     if ([[prefkey:@"kAdmin"] boolValue]) {
@@ -204,7 +204,7 @@ kASupp
     } else { %orig; }
 }
 
-- (bool) admin {
+- (bool)admin {
     prefinit;
     %orig;
     if ([[prefkey:@"kAdmin"] boolValue]) {
@@ -213,7 +213,7 @@ kASupp
 }
 // ADMIN END
 // STEAM START
-- (bool) hasSteam {
+- (bool)hasSteam {
     prefinit;
     %orig;
     if ([[prefkey:@"kSteam"] boolValue]) {
@@ -221,7 +221,7 @@ kASupp
     } else { return %orig; }
 }
 
-- (double) steamCooldownDuration {
+- (double)steamCooldownDuration {
     prefinit;
     %orig;
     if ([[prefkey:@"kSteam"] boolValue]) {
@@ -230,7 +230,7 @@ kASupp
 }
 // STEAM END
 // SPEED START
-- (float) miningSpeed {
+- (float)miningSpeed {
     prefinit;
     %orig;
     if ([[prefkey:@"kSpeed"] boolValue]) {
@@ -238,7 +238,7 @@ kASupp
     } else { return %orig; }
 }
 
-- (float) swimmingSpeed {
+- (float)swimmingSpeed {
     prefinit;
     %orig;
     if ([[prefkey:@"kSpeed"] boolValue]) {
@@ -246,7 +246,7 @@ kASupp
     } else { return %orig; }
 }
 
-- (float) climbingSpeed {
+- (float)climbingSpeed {
     prefinit;
     %orig;
     if ([[prefkey:@"kSpeed"] boolValue]) {
@@ -254,7 +254,7 @@ kASupp
     } else { return %orig; };
 }
 
-- (float) runningSpeed {
+- (float)runningSpeed {
     prefinit;
     %orig;
     if ([[prefkey:@"kSpeed"] boolValue]) {
@@ -262,7 +262,7 @@ kASupp
     } else { return %orig; }
 }
 
-- (float) flyingSpeed {
+- (float)flyingSpeed {
     prefinit;
     %orig;
     if ([[prefkey:@"kSpeed"] boolValue]) {
@@ -271,7 +271,7 @@ kASupp
 }
 // SPEED END
 // DAMAGE START
-- (float) aimSteadiness {
+- (float)aimSteadiness {
     prefinit;
     %orig;
     if ([[prefkey:@"kDamage"] boolValue]) {
@@ -279,7 +279,7 @@ kASupp
     } else { return %orig; };
 }
 
-- (bool) damage:(int)arg1 amount:(float)arg2 attacker:(id)arg3 {
+- (bool)damage:(int)arg1 amount:(float)arg2 attacker:(id)arg3 {
     prefinit;
     %orig;
     if ([[prefkey:@"kDamage"] boolValue]) {
@@ -288,7 +288,7 @@ kASupp
     } else { return %orig; }
 }
 
-- (float) gunEfficiency {
+- (float)gunEfficiency {
     prefinit;
     %orig;
     if ([[prefkey:@"kDamage"] boolValue]) {
@@ -297,7 +297,7 @@ kASupp
 }
 // DAMAGE END
 // INVINCIBILITY START
-- (BOOL) canEvadePrecipitationDamage:(int)arg1 {
+- (BOOL)canEvadePrecipitationDamage:(int)arg1 {
     prefinit;
     %orig;
     if ([[prefkey:@"kInvincibility"] boolValue]) {
@@ -305,7 +305,7 @@ kASupp
     } else { return %orig; }
 }
 
-- (bool) canBeDamaged {
+- (bool)canBeDamaged {
     prefinit;
     %orig;
     if ([[prefkey:@"kInvincibility"] boolValue]) {
@@ -313,7 +313,7 @@ kASupp
     } else { return %orig; }
 }
 
-- (void) environmentalDamage:(int)arg1 amount:(float)arg2 {
+- (void)environmentalDamage:(int)arg1 amount:(float)arg2 {
     prefinit;
     %orig;
     if ([[prefkey:@"kInvincibility"] boolValue]) {
@@ -323,29 +323,29 @@ kASupp
 }
 // INVINCIBILITY END
 // COLLISION START
-- (void) didCollideWithEntity:(id)arg1 {
+- (void)didCollideWithEntity:(id)arg1 {
     arg1 = nil;
     %orig;
 
 }
 
-- (void) didCollideFeetWithEntity:(id)arg1 {
+- (void)didCollideFeetWithEntity:(id)arg1 {
     arg1 = nil;
     %orig;
 }
 
-- (void) slowForEntity:(id)arg1 {
+- (void)slowForEntity:(id)arg1 {
     arg1 = nil;
     %orig;
 
 }
 
-- (bool) colliding {
+- (bool)colliding {
     return NO;
 }
 // COLLISION END
 // ANTI-SUPPRESSOR START
-- (bool) suppressFlight {
+- (bool)suppressFlight {
     prefinit;
     %orig;
     if ([[prefkey:@"kASupp"] boolValue]) {
@@ -353,7 +353,7 @@ kASupp
     } else { return %orig; }
 }
 
-- (bool) suppressGuns {
+- (bool)suppressGuns {
     prefinit;
     %orig;
     if ([[prefkey:@"kASupp"] boolValue]) {
@@ -361,7 +361,7 @@ kASupp
    } else { return %orig; }
 }
 
-- (void) setSuppressGuns:(bool)arg1 {
+- (void)setSuppressGuns:(bool)arg1 {
     prefinit;
     %orig;
     if ([[prefkey:@"kASupp"] boolValue]) {
@@ -370,7 +370,7 @@ kASupp
    } else { %orig; }
 }
 
-- (bool) suppressMining {
+- (bool)suppressMining {
     prefinit;
     %orig;
     if ([[prefkey:@"kASupp"] boolValue]) {
@@ -378,7 +378,7 @@ kASupp
     } else { return %orig; }
 }
 
-- (void) setSuppressFlight:(bool)arg1 {
+- (void)setSuppressFlight:(bool)arg1 {
     prefinit;
     %orig;
     if ([[prefkey:@"kASupp"] boolValue]) {
@@ -387,7 +387,7 @@ kASupp
     } else { %orig; }
 }
 
-- (void) setSuppressMining:(bool)arg1 {
+- (void)setSuppressMining:(bool)arg1 {
     prefinit;
     %orig;
     if ([[prefkey:@"kASupp"] boolValue]) {
@@ -397,7 +397,7 @@ kASupp
 }
 // ANTI-SUPPRESSOR END
 // PHASE START
-- (bool) skilledToMine:(id)arg1 {
+- (bool)skilledToMine:(id)arg1 {
     prefinit;
     %orig;
     if ([[prefkey:@"kPhase"] boolValue]) {
@@ -409,7 +409,7 @@ kASupp
 
 %hook WorldZone
 // NOCLIP START
-- (int) adminLoad {
+- (int)adminLoad {
     prefinit;
     %orig;
     if ([[prefkey:@"kNoClip"] boolValue]) {
@@ -418,7 +418,7 @@ kASupp
 }
 // NOCLIP END
 // PHASE START
-- (bool) isProtected {
+- (bool)isProtected {
     prefinit;
     %orig;
     if ([[prefkey:@"kPhase"] boolValue]) {
@@ -430,7 +430,7 @@ kASupp
 
 %hook BaseBlock
 // PHASE START
-- (bool) protectedByField {
+- (bool)protectedByField {
     prefinit;
     %orig;
     if ([[prefkey:@"kPhase"] boolValue]) {
@@ -442,7 +442,7 @@ kASupp
 
 %hook MetaBlock
 // PHASE START
-- (bool) ownedByPlayerOrFollower {
+- (bool)ownedByPlayerOrFollower {
     prefinit;
     %orig;
     if ([[prefkey:@"kPhase"] boolValue]) {
@@ -450,7 +450,7 @@ kASupp
     } else { return %orig; }
 }
 
-- (bool) ownedByPlayer {
+- (bool)ownedByPlayer {
     prefinit;
     %orig;
     if ([[prefkey:@"kPhase"] boolValue]) {
@@ -459,7 +459,7 @@ kASupp
 }
 // PHASE END
 // SURVIVAL START
-- (float) temperature {
+- (float)temperature {
     prefinit;
     %orig;
     if ([[prefkey:@"kSurvival"] boolValue]) {
@@ -467,7 +467,7 @@ kASupp
     } else { return %orig; }
 }
 
-- (void) setTemperature:(float)arg1 {
+- (void)setTemperature:(float)arg1 {
     prefinit;
     %orig;
     if ([[prefkey:@"kSurvival"] boolValue]) {
@@ -480,7 +480,7 @@ kASupp
 
 %hook CCSpeed
 // SPEED START
-- (double) speed {
+- (double)speed {
     prefinit;
     %orig;
     if ([[prefkey:@"kSpeed"] boolValue]) {
@@ -492,7 +492,7 @@ kASupp
 
 %hook Item
 // SWING START
-- (bool) isMiningTool {
+- (bool)isMiningTool {
   prefinit;
   %orig;
   if ([[prefkey:@"kSwing"] boolValue]) {
@@ -501,7 +501,7 @@ kASupp
 }
 // SWING END
 // POWER MINE START
-- (float) power {
+- (float)power {
     prefinit;
     %orig;
     if ([[prefkey:@"kPowerMine"] boolValue]) {
@@ -510,7 +510,7 @@ kASupp
 }
 // POWER MINE END
 // DAMAGE START
-- (float) damageAmount {
+- (float)damageAmount {
     prefinit;
     %orig;
     if ([[prefkey:@"kDamage"] boolValue]) {
@@ -518,7 +518,7 @@ kASupp
     } else { return %orig; }
 }
 
-- (float) fieldDamageAmount {
+- (float)fieldDamageAmount {
     prefinit;
     %orig;
     if ([[prefkey:@"kDamage"] boolValue]) {
@@ -526,7 +526,7 @@ kASupp
     } else { return %orig; }
 }
 
-- (float) damageRange {
+- (float)damageRange {
     prefinit;
     %orig;
     if ([[prefkey:@"kDamage"] boolValue]) {
@@ -535,7 +535,7 @@ kASupp
 }
 // DAMAGE END
 // INVINCIBILITY START
-- (bool) invulnerable {
+- (bool)invulnerable {
     prefinit;
     %orig;
     if ([[prefkey:@"kInvincibility"] boolValue]) {
@@ -547,7 +547,7 @@ kASupp
 
 %hook EntityConfig
 // INVINCIBILITY START
-- (float) collisionDamageAmount {
+- (float)collisionDamageAmount {
     prefinit;
     %orig;
     if ([[prefkey:@"kInvincibility"] boolValue]) {
